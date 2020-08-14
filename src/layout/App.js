@@ -2,12 +2,10 @@ import React from 'react'
 import AppRoutes from './router'
 import './App.css'
 
-function App() {
+export default () => {
   return (
     <>
       <AppRoutes />
     </>
   )
 }
-
-export default App
