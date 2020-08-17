@@ -1,0 +1,127 @@
+:root {
+  --modal-bg: #222;
+  --modal-bgo: #000000c9;
+  --modal-bgh: #444;
+  --modal-color: #fff;
+
+  --modal-primary-bg: #0085a7;
+  --modal-primary-bgh: #015d74;
+  --modal-primary-color: #fff;
+
+  --modal-secondary-bg: #222;
+  --modal-secondary-bgh: #444;
+  --modal-secondary-color: #fff;
+
+  --modal-success-bg: #008327;
+  --modal-success-bgh: #00561a;
+  --modal-success-color: #fff;
+
+  --modal-error-bg: #940404;
+  --modal-error-bgh: #640101;
+  --modal-error-color: #fff;
+
+  --modal-warning-bg: #c47500;
+  --modal-warning-bgh: #915700;
+  --modal-warning-color: #fff;
+}
+
+#root-modal {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+}
+#root-modal .box-modal {
+  background-color: var(--modal-bgo);
+
+  display: block;
+  height: 100vh;
+  padding-top: 10px;
+  width: 100%;
+}
+
+#root-modal [class*='size-'] {
+  background-color: var(--modal-bg);
+  border: 1px solid var(--modal-bgh);
+  border-radius: 4px;
+  color: var(--modal-color);
+
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+}
+
+#root-modal .modal-header {
+  align-items: center;
+  border-bottom: 1px solid var(--modal-bgh);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 10px 15px;
+}
+
+#root-modal .fullScreen {
+  background-color: var(--modal-bg);
+  border: 1px solid var(--modal-bgh);
+  color: var(--modal-color);
+  border-radius: 0px;
+  height: 100vh;
+  padding: 0;
+  width: 100vw;
+}
+
+#root-modal .fullScreen .modal-actions {
+  margin-right: 15px;
+}
+
+#root-modal .fullScreen .modal-content {
+  overflow: auto;
+}
+
+#root-modal .modal-content {
+  padding: 10px 15px;
+}
+#root-modal .modal-content + .modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid var(--modal-bgh);
+  padding: 10px 15px;
+}
+#root-modal .modal-actions > button {
+  margin-left: 10px;
+}
+
+#root-modal .modal-close {
+  align-items: center;
+  align-self: flex-start;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--modal-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 12px;
+  height: 25px;
+  justify-content: center;
+  margin: 0px 4px 0 0;
+  width: 25px;
+}
+
+#root-modal .modal-close:hover {
+  background-color: var(--modal-bgh);
+}
+#root-modal .modal-close:focus {
+  position: relative;
+  top: 1px;
+  outline: none;
+}
+
+#root-modal .size-small {
+  max-width: 300px;
+}
+#root-modal .size-medium {
+  max-width: 600px;
+}
+#root-modal .size-large {
+  max-width: 800px;
+}

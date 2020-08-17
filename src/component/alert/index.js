@@ -22,7 +22,7 @@ export function Alert() {
         )
         return (
           <div key={alert.id} className={`box-alert alert-${alert.type}`}>
-            <div>{alert.mensage}</div>
+            <div dangerouslySetInnerHTML={{ __html: alert.mensage }}></div>
             <button className='alert-close' onClick={() => dispatch(Remove(alert.id))}>
               <IcoCross />
             </button>

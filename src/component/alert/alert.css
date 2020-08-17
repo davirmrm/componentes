@@ -1,23 +1,23 @@
 :root {
-  --primary-bg: #0085a7;
-  --primary-bgh: #015d74;
-  --primary-color: #fff;
+  --alert-primary-bg: #0085a7;
+  --alert-primary-bgh: #015d74;
+  --alert-primary-color: #fff;
 
-  --secondary-bg: #222;
-  --secondary-bgh: #444;
-  --secondary-color: #fff;
+  --alert-secondary-bg: #222;
+  --alert-secondary-bgh: #444;
+  --alert-secondary-color: #fff;
 
-  --success-bg: #008327;
-  --success-bgh: #00561a;
-  --success-color: #fff;
+  --alert-success-bg: #008327;
+  --alert-success-bgh: #00561a;
+  --alert-success-color: #fff;
 
-  --error-bg: #940404;
-  --error-bgh: #640101;
-  --error-color: #fff;
+  --alert-error-bg: #940404;
+  --alert-error-bgh: #640101;
+  --alert-error-color: #fff;
 
-  --warning-bg: #c47500;
-  --warning-bgh: #915700;
-  --warning-color: #fff;
+  --alert-warning-bg: #c47500;
+  --alert-warning-bgh: #915700;
+  --alert-warning-color: #fff;
 }
 
 #root-alert {
@@ -25,6 +25,7 @@
   top: 10px;
   /* left: 10px; */
   right: 10px;
+  z-index: 999;
 }
 #root-alert .box-alert {
   background-color: #fff;
@@ -65,71 +66,71 @@
 }
 
 #root-alert .alert-primary {
-  background-color: var(--primary-bg);
-  border: 1px solid var(--primary-bgh);
+  background-color: var(--alert-primary-bg);
+  border: 1px solid var(-alert--primary-bgh);
   color: var(--primary-color);
 }
 #root-alert .alert-primary .alert-close {
-  background-color: var(--primary-bg);
-  color: var(--primary-color);
+  background-color: var(--alert-primary-bg);
+  color: var(--alert-primary-color);
 }
 #root-alert .alert-primary .alert-close:hover {
-  background-color: var(--primary-bgh);
-  color: var(--primary-color);
+  background-color: var(--alert-primary-bgh);
+  color: var(--alert-primary-color);
 }
 
 #root-alert .alert-secondary {
-  background-color: var(--secondary-bg);
-  border: 1px solid var(--secondary-bgh);
-  color: var(--secondary-color);
+  background-color: var(--alert-secondary-bg);
+  border: 1px solid var(--alert-secondary-bgh);
+  color: var(--alert-secondary-color);
 }
 #root-alert .alert-secondary .alert-close {
-  background-color: var(--secondary-bg);
-  color: var(--secondary-color);
+  background-color: var(--alert-secondary-bg);
+  color: var(--alert-secondary-color);
 }
 #root-alert .alert-secondary .alert-close:hover {
-  background-color: var(--secondary-bgh);
-  color: var(--secondary-color);
+  background-color: var(--alert-secondary-bgh);
+  color: var(--alert-secondary-color);
 }
 
 #root-alert .alert-success {
-  background-color: var(--success-bg);
-  border: 1px solid var(--success-bgh);
-  color: var(--success-color);
+  background-color: var(--alert-success-bg);
+  border: 1px solid var(--alert-success-bgh);
+  color: var(--alert-success-color);
 }
 #root-alert .alert-success .alert-close {
-  background-color: var(--success-bg);
-  color: var(--success-color);
+  background-color: var(--alert-success-bg);
+  color: var(--alert-success-color);
 }
 #root-alert .alert-success .alert-close:hover {
-  background-color: var(--success-bgh);
-  color: var(--success-color);
+  background-color: var(--alert-success-bgh);
+  color: var(--alert-success-color);
 }
 
 #root-alert .alert-error {
-  background-color: var(--error-bg);
-  border: 1px solid var(--error-bgh);
-  color: var(--error-color);
+  background-color: var(--alert-error-bg);
+  border: 1px solid var(--alert-error-bgh);
+  color: var(--alert-error-color);
 }
 #root-alert .alert-error .alert-close {
-  background-color: var(--error-bg);
-  color: var(--error-color);
+  background-color: var(--alert-error-bg);
+  color: var(--alert-error-color);
 }
 #root-alert .alert-error .alert-close:hover {
-  background-color: var(--error-bgh);
-  color: var(--error-color);
+  background-color: var(--alert-error-bgh);
+  color: var(--alert-error-color);
 }
 
 #root-alert .alert-warning {
-  background-color: var(--warning-bg);
-  border: 1px solid var(--warning-bgh);
-  color: var(--warning-color);
+  background-color: var(--alert-warning-bg);
+  border: 1px solid var(--alert-warning-bgh);
+  color: var(--alert-warning-color);
 }
 #root-alert .alert-warning .alert-close {
-  background-color: var(--warning-bg);
-  color: var(--warning-color);
+  background-color: var(--alert-warning-bg);
+  color: var(--alert-warning-color);
 }
 #root-alert .alert-warning .alert-close:hover {
-  background-color: var(--warning-bgh);
-  color: var(--warning-color);
+  background-color: var(--alert-warning-bgh);
+  color: var(--alert-warning-color);
 }
