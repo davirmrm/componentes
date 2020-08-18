@@ -57,7 +57,7 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
         {children.map(e => {
           return e && e.type && e.type.name === 'Actions' ? (
             <div key={e} className='modal-actions'>
-              <button className='btn secondary' onClick={close}>
+              <button className='btn secondary normal' onClick={close}>
                 {closeText}
               </button>
               {e}
