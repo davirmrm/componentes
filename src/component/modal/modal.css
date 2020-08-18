@@ -56,7 +56,7 @@
   border-bottom: 1px solid var(--modal-bgh);
   display: flex;
   justify-content: space-between;
-  padding: 10px 0 10px 15px;
+  padding: 10px 15px;
 }
 
 #root-modal .fullScreen {
@@ -103,7 +103,6 @@
   font-size: 12px;
   height: 25px;
   justify-content: center;
-  margin: 0px 4px 0 0;
   width: 25px;
 }
 

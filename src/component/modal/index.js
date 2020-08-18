@@ -23,7 +23,7 @@ const fulscren = ({ title, children, closeText, close }) => {
         {title}
         {children.map(e => {
           return e && e.type && e.type.name === 'Actions' ? (
-            <div key={e} className='modal-actions'>
+            <div key={e.type} className='modal-actions'>
               <button className='btn secondary' onClick={close}>
                 {closeText}
               </button>
@@ -34,7 +34,7 @@ const fulscren = ({ title, children, closeText, close }) => {
       </div>
       {children.map(e => {
         return e && e.type ? null : (
-          <div key={e} className='modal-content'>
+          <div key={e.type} className='modal-content'>
             {e}
           </div>
         )
@@ -54,9 +54,9 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
           </button>
         </div>
 
-        {children.map(e => {
+        {children.map((e, i) => {
           return e && e.type && e.type.name === 'Actions' ? (
-            <div key={e} className='modal-actions'>
+            <div key={e.type} className='modal-actions'>
               <button className='btn secondary normal' onClick={close}>
                 {closeText}
               </button>

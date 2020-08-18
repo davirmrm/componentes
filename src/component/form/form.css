@@ -1,0 +1,128 @@
+:root {
+  --input-bg: transparent;
+  --input-bgh: #666;
+  --input-color: #fff;
+
+  --input-primary-bg: #0085a7;
+  --input-primary-bgh: #015d74;
+  --input-primary-color: #fff;
+
+  --input-secondary-bg: #222;
+  --input-secondary-bgh: #444;
+  --input-secondary-color: #fff;
+
+  --input-success-bg: #008327;
+  --input-success-bgh: #00561a;
+  --input-success-color: #fff;
+
+  --input-error-bg: #940404;
+  --input-error-bgh: #640101;
+  --input-error-color: #fff;
+
+  --input-warning-bg: #c47500;
+  --input-warning-bgh: #915700;
+  --input-warning-color: #fff;
+}
+
+.input-box {
+  position: relative;
+}
+.input-box label {
+  color: var(--input-color);
+  display: block;
+  padding-bottom: 5px;
+}
+
+.input-box input,
+.input-box textarea {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-bgh);
+  border-radius: 4px;
+  color: var(--input-color);
+  display: block;
+  padding: 8px 15px;
+  width: 100%;
+}
+.input-box textarea {
+  min-height: 100px;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+  outline: none;
+}
+
+.input-box > div {
+  position: relative;
+}
+.input-box .input-actions {
+  align-items: center;
+  display: flex;
+  height: 100%;
+  position: absolute;
+  right: 4px;
+  top: 0;
+}
+
+.input-box .input-actions button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--input-secondary-color);
+  cursor: pointer;
+
+  display: flex;
+  font-size: 12px;
+  height: 25px;
+  justify-content: center;
+  width: 25px;
+}
+
+.input-box .input-actions button:hover {
+  background-color: var(--input-secondary-bgh);
+}
+
+.input-box .input-actions button:active {
+  position: relative;
+  top: 1px;
+}
+.input-box .input-actions button:focus {
+  outline: none;
+}
+
+.input-box .textarea-actions {
+  height: 100%;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.input-box .textarea-actions button {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  color: var(--input-secondary-color);
+  cursor: pointer;
+
+  display: flex;
+  font-size: 12px;
+  height: 25px;
+  justify-content: center;
+  width: 25px;
+}
+
+.input-box .textarea-actions button:hover {
+  background-color: var(--input-secondary-bgh);
+}
+
+.input-box .textarea-actions button:active {
+  position: relative;
+  top: 1px;
+}
+.input-box .textarea-actions button:focus {
+  outline: none;
+}
