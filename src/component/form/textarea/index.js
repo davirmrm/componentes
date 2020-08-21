@@ -11,17 +11,17 @@ export function Textarea({ children, action, value, label, name, color = '' }) {
 
         {children && children.length ? (
           children.map(e => {
-            return e && e.type && e.type.name === 'Action' ? e : null
+            return e && e.type && e.type.name === 'ActionForm' ? e : null
           })
-        ) : children && children.type && children.type.name === 'Action' ? (
+        ) : children && children.type && children.type.name === 'ActionForm' ? (
           <div className='textarea-actions'>{children}</div>
         ) : null}
       </div>
       {children && children.length
         ? children.map(e => {
-            return e && e.type && e.type.name !== 'Action' ? e : null
+            return e && e.type && e.type.name !== 'ActionForm' ? e : null
           })
-        : children && children.type && children.type.name !== 'Action'
+        : children && children.type && children.type.name !== 'ActionForm'
         ? children
         : null}
     </div>

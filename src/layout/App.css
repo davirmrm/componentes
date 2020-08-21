@@ -1,5 +1,6 @@
 :root {
   --background-page: #282c34;
+  --color-page: #fff;
 }
 body {
   background-color: var(--background-page);

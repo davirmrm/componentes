@@ -43,6 +43,7 @@
   padding: 8px 15px;
   width: 100%;
 }
+
 .input-box textarea {
   min-height: 100px;
   min-width: 100%;
@@ -134,8 +135,23 @@ button.select-selected {
   color: var(--input-color);
   cursor: pointer;
   display: flex;
+  justify-content: space-between;
   padding: 8px 15px;
   width: 100%;
+}
+button.select-selected:after {
+  content: '';
+  border-bottom: 2px solid var(--input-secondary-color);
+  border-left: 2px solid var(--input-secondary-color);
+  height: 8px;
+  width: 8px;
+  transform: rotate(-50deg);
+  transition: all 0.1s;
+}
+button.select-selected.open:after {
+  margin-top: 4px;
+  transform: rotate(135deg);
+  transition: all 0.1s;
 }
 .select-filter {
   position: relative;
@@ -161,6 +177,7 @@ button.select-selected {
 
   top: 100%;
   width: 100%;
+  z-index: 3;
 }
 .select-box .select-options {
   position: relative;
@@ -183,6 +200,11 @@ button.select-selected {
   top: 1px;
 }
 
+.select-box .select-options > div {
+  align-items: center;
+  display: flex;
+}
+
 .select-box.multiselect .select-options > div.selected {
   background-color: var(--input-bg);
 }
@@ -192,31 +214,32 @@ button.select-selected {
   color: var(--input-color);
   cursor: pointer;
   display: inline-block;
-  height: 15px;
+  height: 18px;
   margin-right: 8px;
   position: relative;
-  width: 15px;
+  width: 18px;
 }
 .select-box.multiselect .select-options > div.selected .checkelement {
-  background-color: var(--input-secondary-bg);
+  background-color: var(--input-primary-bg);
 }
 .select-box.multiselect .select-options > div.selected .checkelement:after {
   content: '';
   border-bottom: 2px solid var(--input-secondary-color);
   border-left: 2px solid var(--input-secondary-color);
-  height: 8px;
+  height: 9px;
   left: 1px;
   margin-right: 8px;
   position: absolute;
   top: 0px;
-  width: 11px;
+  width: 14px;
   transform: rotate(-50deg);
 }
 
 .check-box {
+  align-items: center;
   color: var(--input-color);
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   line-height: 34px;
   margin-left: 10px;
 }
@@ -227,35 +250,38 @@ button.select-selected {
   border: 1px solid var(--input-bgh);
   border-radius: 4px;
   display: inline-block;
-  height: 15px;
+  height: 20px;
   margin-right: 8px;
   position: relative;
   transition: all 0.3s;
-  width: 15px;
+  width: 20px;
+}
+.check-box.checked .checkbox {
+  background-color: var(--input-primary-bg);
+  transition: all 0.3s;
 }
 .check-box.checked .checkbox:after {
   content: '';
-  border-bottom: 2px solid var(--input-secondary-color);
-  border-left: 2px solid var(--input-secondary-color);
-  height: 8px;
+  border-bottom: 3px solid var(--input-secondary-color);
+  border-left: 3px solid var(--input-secondary-color);
+  height: 10px;
   left: 1px;
-  margin-right: 8px;
   position: absolute;
-  top: 0px;
-  width: 11px;
+  top: 1px;
+  width: 15px;
   transform: rotate(-50deg);
   transition: all 0.3s;
 }
 
 .check-box .switch {
   border: 1px solid var(--input-bgh);
-  border-radius: 10px;
+  border-radius: 50px;
   display: inline-block;
-  height: 15px;
+  height: 20px;
   margin-right: 8px;
   position: relative;
   transition: all 0.3s;
-  width: 40px;
+  width: 45px;
 }
 .check-box.checked .switch {
   background-color: var(--input-primary-bg);
@@ -265,12 +291,12 @@ button.select-selected {
   content: '';
   background-color: var(--input-secondary-color);
   border-radius: 50%;
-  height: 13px;
+  height: 20px;
   left: 0px;
   position: absolute;
-  top: 0px;
+  top: -1px;
   transition: all 0.3s;
-  width: 13px;
+  width: 20px;
 }
 .check-box.checked .switch:after {
   margin-left: 25px;
@@ -278,9 +304,10 @@ button.select-selected {
 }
 
 .radio-box {
+  align-items: center;
   color: var(--input-color);
   cursor: pointer;
-  display: inline-block;
+  display: inline-flex;
   line-height: 34px;
   margin-left: 10px;
 }
@@ -291,15 +318,15 @@ button.select-selected {
   border: 1px solid var(--input-bgh);
   border-radius: 50%;
   display: inline-block;
-  height: 15px;
+  height: 20px;
   margin-right: 8px;
   position: relative;
   transition: all 0.3s;
-  width: 15px;
+  width: 20px;
 }
 .radio-box.checked .checkbox {
   background-color: var(--input-primary-bg);
-  border-color: var(--input-primary-color);
+  border: 2px solid var(--input-primary-color);
   border-radius: 50%;
   transition: all 0.3s;
 }

@@ -29,7 +29,7 @@ const verifyType = t => {
   }
 }
 
-export const Add = (t, m = 'Insira uma mensagem', h = 5000) => {
+export const AddAlert = (t, m = 'Insira uma mensagem', h = 5000) => {
   const alert = { type: verifyType(t), mensage: m, time: h, id: Math.floor(Math.random() * 65536) }
 
   return dispatch => {
@@ -37,7 +37,7 @@ export const Add = (t, m = 'Insira uma mensagem', h = 5000) => {
   }
 }
 
-export const Remove = e => {
+export const RemoveAlert = e => {
   return dispatch => {
     dispatch(removeAlert(e))
   }

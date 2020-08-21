@@ -1,8 +1,8 @@
 import React from 'react'
 
-export function Action({ children, action, title = '', color = 'secondary' }) {
+export function ActionForm({ children, action, title = '', color = 'secondary', disabled = false }) {
   return (
-    <button onClick={action} title={title}>
+    <button type='button' onClick={action} title={title} disabled={disabled}>
       {children}
     </button>
   )

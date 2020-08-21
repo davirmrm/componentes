@@ -1,6 +1,16 @@
 import React from 'react'
 
-export function Checkbox({ options, action, checked, label, name, type = 'checkbox', color = '', text = '' }) {
+export function Checkbox({
+  options,
+  action,
+  checked,
+  label,
+  name,
+  type = 'checkbox',
+  color = '',
+  text = '',
+  disabled = false
+}) {
   const veryfiCheck = e => {
     const verify = checked.filter(elem => {
       return elem.id === e.id ? elem : null
@@ -56,7 +66,7 @@ export function Checkbox({ options, action, checked, label, name, type = 'checkb
               <div
                 key={`${name}-${c.id}`}
                 className={`check-box ${veryfiChecked(c) ? 'checked' : ''}`}
-                onClick={() => checkedAction(c)}
+                onClick={() => checkedAction(!disabled ? c : null)}
               >
                 <span className={type}></span>
                 {c.name}
@@ -64,7 +74,10 @@ export function Checkbox({ options, action, checked, label, name, type = 'checkb
             )
           })
         ) : (
-          <div className={`check-box ${checked ? 'checked' : ''}`} onClick={() => checkedAction(!checked)}>
+          <div
+            className={`check-box ${checked ? 'checked' : ''}`}
+            onClick={() => checkedAction(!disabled ? !checked : false)}
+          >
             <span className={type}></span>
             {text}
           </div>

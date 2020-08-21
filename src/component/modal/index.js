@@ -22,7 +22,7 @@ const fulscren = ({ title, children, closeText, close }) => {
       <div className='modal-header'>
         {title}
         {children.map(e => {
-          return e && e.type && e.type.name === 'Actions' ? (
+          return e && e.type && e.type.name === 'ActionsModal' ? (
             <div key={e.type} className='modal-actions'>
               <button className='btn secondary' onClick={close}>
                 {closeText}
@@ -55,7 +55,7 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
         </div>
 
         {children.map((e, i) => {
-          return e && e.type && e.type.name === 'Actions' ? (
+          return e && e.type && e.type.name === 'ActionsModal' ? (
             <div key={e.type} className='modal-actions'>
               <button className='btn secondary normal' onClick={close}>
                 {closeText}
@@ -73,6 +73,6 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
   )
 }
 
-export function Actions({ children }) {
+export function ActionsModal({ children }) {
   return children
 }

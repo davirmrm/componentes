@@ -4,7 +4,7 @@ import Portal from '../potal'
 import './alert.css'
 
 import { IcoCross } from '../icon'
-import { Remove } from './actions'
+import { RemoveAlert } from './actions'
 export * from './actions'
 
 export function Alert() {
@@ -16,14 +16,14 @@ export function Alert() {
       {alerts.map(alert => {
         setTimeout(
           function () {
-            dispatch(Remove(alert.id))
+            dispatch(RemoveAlert(alert.id))
           },
           alert.time ? alert.time : 3000
         )
         return (
           <div key={alert.id} className={`box-alert alert-${alert.type}`}>
             <div dangerouslySetInnerHTML={{ __html: alert.mensage }}></div>
-            <button className='alert-close' onClick={() => dispatch(Remove(alert.id))}>
+            <button className='alert-close' onClick={() => dispatch(RemoveAlert(alert.id))}>
               <IcoCross />
             </button>
           </div>

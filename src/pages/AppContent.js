@@ -1,15 +1,34 @@
 import React, { useEffect, useState } from 'react'
-import { Alert, Add } from '../component/alert'
-import { Modal, Actions } from '../component/modal'
+import { Alert, AddAlert } from '../component/alert'
+import { Modal, ActionsModal } from '../component/modal'
 import { listarAlerts } from '../layout/redux/AppActions'
 import { useDispatch, useSelector } from 'react-redux'
 import Logo from './Logo'
 import { Button } from '../component/button'
-import { Input, Action, Textarea, Checkbox, RadioButton } from '../component/form'
+import { Input, ActionForm, Textarea, Checkbox, RadioButton } from '../component/form'
 
 import ButonsPage from './buttons'
-import { IcoSearch, IcoClose } from '../component/icon'
-import { Select, Filter, filterAction } from '../component/form/select'
+import { IcoClose } from '../component/icon'
+import { Select, FilterSelect, FilterAction } from '../component/form/select'
+import { List } from '../component/list'
+import Paginate from '../component/pagination'
+const headDefault = [
+  {
+    colunm: 'id',
+    text: 'Identificador',
+    className: ''
+  },
+  {
+    colunm: 'name',
+    text: 'Nome',
+    className: ''
+  },
+  {
+    colunm: 'acoes',
+    text: 'Acoes',
+    className: 'actions'
+  }
+]
 const selectFakeDefault = [
   {
     id: 1,
@@ -31,7 +50,8 @@ export default () => {
   const [inputsList, setInputsList] = useState({
     input: '',
     senha: '',
-    select: [],
+    select: {},
+    multiselect: [],
     checkboxg: [],
     checkboxSwitchg: [],
     radio: {}
@@ -58,14 +78,14 @@ export default () => {
           </p>
           <a
             className='App-link'
-            onClick={() => dispatch(Add('success', 'Alerta mensagem' + (alert.length + 1)))}
+            onClick={() => dispatch(AddAlert('success', 'Alerta mensagem' + (alert.length + 1)))}
             rel='noopener noreferrer'
           >
             Learn React
           </a>
           <a
             className='App-link'
-            onClick={() => dispatch(Add('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
+            onClick={() => dispatch(AddAlert('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
             rel='noopener noreferrer'
           >
             Learn React
@@ -74,9 +94,9 @@ export default () => {
       </div>
       <div>
         <Input label='label' name='input' action={e => hanldeChange(e)} value={inputsList.input}>
-          <Action action={e => setInputsList({ ...inputsList, input: '' })} title='Limpar'>
+          <ActionForm action={e => setInputsList({ ...inputsList, input: '' })} title='Limpar'>
             <IcoClose />
-          </Action>
+          </ActionForm>
         </Input>
 
         <Input
@@ -86,9 +106,9 @@ export default () => {
           action={e => hanldeChange(e)}
           value={inputsList.senha}
         >
-          <Action action={e => setSenha(!senha)} title={senha ? 'visivel' : 'invisivel'}>
+          <ActionForm action={e => setSenha(!senha)} title={senha ? 'visivel' : 'invisivel'}>
             <IcoClose />
-          </Action>
+          </ActionForm>
         </Input>
 
         <Input label='label data' type='date' name='data' action={e => hanldeChange(e)} value={inputsList.data} />
@@ -104,11 +124,27 @@ export default () => {
         <Textarea label='label textarea' name='textarea' action={e => hanldeChange(e)} value={inputsList.textarea} />
 
         <Select
-          label='label textarea'
+          label='label select '
           name='select'
           action={e => hanldeChange(e)}
           options={selectFake}
           selected={inputsList.select}
+          // textCustom={['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos']}
+          // closeOnSelect={false}
+          filter
+          // ={{
+          //   clean: <IcoClose />,
+          //   text: <IcoSearch />,
+          //   title: 'Filtrar'
+          // }}
+        />
+
+        <Select
+          label='label multiselect'
+          name='multiselect'
+          action={e => hanldeChange(e)}
+          options={selectFake}
+          selected={inputsList.multiselect}
           // textCustom={['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos']}
           multiSelect
           // closeOnSelect={false}
@@ -118,10 +154,10 @@ export default () => {
           //   title: 'Filtrar'
           // }}
         >
-          <Filter
+          <FilterSelect
             // clean={<IcoClose />}
             // filter={<IcoSearch />}
-            action={e => setselectFake(filterAction(selectFakeDefault, e))}
+            action={e => setselectFake(FilterAction(selectFakeDefault, e))}
             title='Filtrardd'
           />
         </Select>
@@ -171,6 +207,21 @@ export default () => {
         />
       </div>
 
+      <div>
+        <List
+          head={headDefault}
+          content={selectFakeDefault}
+          listActions={e => (
+            <div className='acoes'>
+              <Button color='success' action={() => console.log(e, 'MERTA')}>
+                Learn React success
+              </Button>
+            </div>
+          )}
+        />
+        <Paginate />
+      </div>
+
       <ButonsPage />
 
       <Modal
@@ -181,20 +232,20 @@ export default () => {
         closeText='Fechar'
       >
         Learn React Content
-        <Actions>
+        <ActionsModal>
           <Button
             color='success'
-            action={() => dispatch(Add('success', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
+            action={() => dispatch(AddAlert('success', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
           >
             Learn React success
           </Button>
           <Button
             color='danger'
-            action={() => dispatch(Add('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
+            action={() => dispatch(AddAlert('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
           >
             Learn React error
           </Button>
-        </Actions>
+        </ActionsModal>
       </Modal>
     </div>
   )

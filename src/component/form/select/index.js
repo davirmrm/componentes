@@ -12,6 +12,7 @@ export function Select({
   color = '',
   closeOnSelect = true,
   multiSelect = false,
+  disabled = false,
   textCustom = ['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos'],
   filter = false
 }) {
@@ -101,7 +102,10 @@ export function Select({
     <div className={`input-box ${color} `}>
       <label htmlFor={`id-${name}`}>{label}</label>
       <div ref={ref}>
-        <button className='select-selected' onClick={() => openSelect(!selectState.open)}>
+        <button
+          className={`select-selected ${selectState.open ? 'open' : ''}`}
+          onClick={() => openSelect(!disabled ? !selectState.open : false)}
+        >
           {textButton(selected)}
         </button>
 
@@ -128,14 +132,14 @@ export function Select({
 
             {children && children.length ? (
               children.map(e => {
-                return e && e.type && e.type.name === 'Filter' ? e : null
+                return e && e.type && e.type.name === 'FilterSelect' ? e : null
               })
-            ) : children && children.type && children.type.name === 'Filter' ? (
+            ) : children && children.type && children.type.name === 'FilterSelect' ? (
               children
             ) : filter ? (
-              <Filter
+              <FilterSelect
                 clean={filter.clean}
-                action={e => setSelectState({ ...selectState, options: filterAction(options, e) })}
+                action={e => setSelectState({ ...selectState, options: FilterAction(options, e) })}
                 filter={filter.text}
                 title={filter.title}
               />
@@ -171,11 +175,11 @@ export function Select({
   )
 }
 
-export function filterAction(d, e) {
+export function FilterAction(d, e) {
   return d.filter(i => (e !== '' ? ([i.name].includes(e) ? i : null) : i))
 }
 
-export function Filter({
+export function FilterSelect({
   children,
   clean = <IcoClose />,
   filter = <IcoSearch />,

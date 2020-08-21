@@ -250,13 +250,13 @@
   align-items: center;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 50%;
+  border-radius: 50px;
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  height: 34px;
+  min-height: 34px;
   justify-content: center;
-  width: 34px;
+  min-width: 34px;
 }
 
 .btn-icon:active {
