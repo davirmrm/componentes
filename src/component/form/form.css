@@ -126,3 +126,180 @@
 .input-box .textarea-actions button:focus {
   outline: none;
 }
+
+button.select-selected {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-bgh);
+  border-radius: 4px;
+  color: var(--input-color);
+  cursor: pointer;
+  display: flex;
+  padding: 8px 15px;
+  width: 100%;
+}
+.select-filter {
+  position: relative;
+  margin: 6px 10px;
+}
+.select-actions-all {
+  position: relative;
+  margin: 6px 10px;
+}
+.select-actions-all > button:first-child {
+  margin-left: 0px;
+}
+.select-actions-all > button {
+  margin-left: 10px;
+}
+
+.select-box {
+  background-color: var(--background-page);
+  border: 1px solid var(--input-bgh);
+  border-radius: 4px;
+  position: absolute;
+  max-height: 300px;
+
+  top: 100%;
+  width: 100%;
+}
+.select-box .select-options {
+  position: relative;
+}
+
+.select-box .select-options > div {
+  border-top: 1px solid var(--input-bgh);
+  color: var(--input-color);
+  cursor: pointer;
+  padding: 6px 10px;
+  position: relative;
+}
+.select-box .select-options > div:hover,
+.select-box .select-options > div.selected {
+  background-color: var(--input-secondary-bgh);
+  color: var(--input-secondary-color);
+}
+.select-box .select-options > div:active {
+  position: relative;
+  top: 1px;
+}
+
+.select-box.multiselect .select-options > div.selected {
+  background-color: var(--input-bg);
+}
+.select-box.multiselect .select-options .checkelement {
+  border: 1px solid var(--input-bgh);
+  border-radius: 4px;
+  color: var(--input-color);
+  cursor: pointer;
+  display: inline-block;
+  height: 15px;
+  margin-right: 8px;
+  position: relative;
+  width: 15px;
+}
+.select-box.multiselect .select-options > div.selected .checkelement {
+  background-color: var(--input-secondary-bg);
+}
+.select-box.multiselect .select-options > div.selected .checkelement:after {
+  content: '';
+  border-bottom: 2px solid var(--input-secondary-color);
+  border-left: 2px solid var(--input-secondary-color);
+  height: 8px;
+  left: 1px;
+  margin-right: 8px;
+  position: absolute;
+  top: 0px;
+  width: 11px;
+  transform: rotate(-50deg);
+}
+
+.check-box {
+  color: var(--input-color);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 34px;
+  margin-left: 10px;
+}
+.check-box:first-child {
+  margin-left: 0px;
+}
+.check-box .checkbox {
+  border: 1px solid var(--input-bgh);
+  border-radius: 4px;
+  display: inline-block;
+  height: 15px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s;
+  width: 15px;
+}
+.check-box.checked .checkbox:after {
+  content: '';
+  border-bottom: 2px solid var(--input-secondary-color);
+  border-left: 2px solid var(--input-secondary-color);
+  height: 8px;
+  left: 1px;
+  margin-right: 8px;
+  position: absolute;
+  top: 0px;
+  width: 11px;
+  transform: rotate(-50deg);
+  transition: all 0.3s;
+}
+
+.check-box .switch {
+  border: 1px solid var(--input-bgh);
+  border-radius: 10px;
+  display: inline-block;
+  height: 15px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s;
+  width: 40px;
+}
+.check-box.checked .switch {
+  background-color: var(--input-primary-bg);
+  transition: all 0.3s;
+}
+.check-box .switch:after {
+  content: '';
+  background-color: var(--input-secondary-color);
+  border-radius: 50%;
+  height: 13px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  transition: all 0.3s;
+  width: 13px;
+}
+.check-box.checked .switch:after {
+  margin-left: 25px;
+  transition: all 0.3s;
+}
+
+.radio-box {
+  color: var(--input-color);
+  cursor: pointer;
+  display: inline-block;
+  line-height: 34px;
+  margin-left: 10px;
+}
+.radio-box:first-child {
+  margin-left: 0px;
+}
+.radio-box .checkbox {
+  border: 1px solid var(--input-bgh);
+  border-radius: 50%;
+  display: inline-block;
+  height: 15px;
+  margin-right: 8px;
+  position: relative;
+  transition: all 0.3s;
+  width: 15px;
+}
+.radio-box.checked .checkbox {
+  background-color: var(--input-primary-bg);
+  border-color: var(--input-primary-color);
+  border-radius: 50%;
+  transition: all 0.3s;
+}

@@ -8,7 +8,7 @@ export default () => {
   }, 1000)
 
   const getRandomColor = () => {
-    const colores = ['#ff0000', '#ff7f00', '#fffff00', '#ffff00', '#000ff', '#4b0082', '#8f00ff']
+    // const colores = ['#ff0000', '#ff7f00', '#fffff00', '#ffff00', '#000ff', '#4b0082', '#8f00ff']
     var letters = '0123456789ABCDEF'
     var color = '#'
     for (var i = 0; i < 6; i++) {

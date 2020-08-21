@@ -1,6 +1,19 @@
-body {
-  background-color: #282c34;
+:root {
+  --background-page: #282c34;
 }
+body {
+  background-color: var(--background-page);
+}
+
+[hidden],
+.hidden {
+  display: none !important;
+}
+
+*:focus {
+  outline: none;
+}
+
 .App {
   text-align: center;
 }
@@ -15,7 +28,6 @@ body {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
