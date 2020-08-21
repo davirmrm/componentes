@@ -87,20 +87,20 @@ export default () => {
           <p onClick={() => setOpen(!open)}>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
+          <button
             className='App-link'
             onClick={() => dispatch(AddAlert('success', 'Alerta mensagem' + (alert.length + 1)))}
             rel='noopener noreferrer'
           >
             Learn React
-          </a>
-          <a
+          </button>
+          <button
             className='App-link'
             onClick={() => dispatch(AddAlert('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
             rel='noopener noreferrer'
           >
             Learn React
-          </a>
+          </button>
         </header>
       </div>
       <div>

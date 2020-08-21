@@ -41,6 +41,9 @@ body {
 }
 .App-link {
   color: #61dafb;
+  border: none;
+  background: transparent;
+  font-size: 20px;
 }
 
 @keyframes App-logo-spin {
