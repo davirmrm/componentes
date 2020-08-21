@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from 'react'
-import { Alert, AddAlert } from '../component/alert'
-import { Modal, ActionsModal } from '../component/modal'
+
 import { listarAlerts } from '../layout/redux/AppActions'
 import { useDispatch, useSelector } from 'react-redux'
 import Logo from './Logo'
-import { Button } from '../component/button'
-import { Input, ActionForm, Textarea, Checkbox, RadioButton } from '../component/form'
 
 import ButonsPage from './buttons'
-import { IcoClose } from '../component/icon'
-import { Select, FilterSelect, FilterAction } from '../component/form/select'
-import { List } from '../component/list'
-import Paginate from '../component/pagination'
+import {
+  Alert,
+  AddAlert,
+  ActionForm,
+  IcoClose,
+  Textarea,
+  Input,
+  Checkbox,
+  Select,
+  List,
+  ActionsModal,
+  Modal,
+  Button,
+  RadioButton,
+  FilterSelect,
+  FilterAction,
+  Paginate
+} from '../component'
 const headDefault = [
   {
     colunm: 'id',

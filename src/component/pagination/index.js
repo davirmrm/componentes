@@ -10,7 +10,7 @@ const textDefault = {
   before: 'Anterior',
   reload: 'Atualizar'
 }
-const Paginate = ({ data = { pageNumber: 0, totalPages: 1, totalElements: 0 }, action, text = textDefault }) => {
+export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements: 0 }, action, text = textDefault }) {
   const [paginateTemp, setPaginateTemp] = useState(String(data.pageNumber ? data.pageNumber : 0 + 1))
 
   const changePaginate = event => {
@@ -68,5 +68,3 @@ const Paginate = ({ data = { pageNumber: 0, totalPages: 1, totalElements: 0 }, a
     </div>
   )
 }
-
-export default Paginate
