@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react'
 import useOutsideClick from '../../useOusideClick'
 import { IcoClose, IcoSearch } from '../../icon'
 
+const chargeDefault = { max: 500, text: 'Mais itens', action: () => null }
 export function Select({
   children,
   options,
@@ -14,7 +15,10 @@ export function Select({
   multiSelect = false,
   disabled = false,
   textCustom = ['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos'],
-  filter = false
+  filter = false,
+  charge = chargeDefault,
+  optionLabel = 'name',
+  optionValue = 'id'
 }) {
   const [selectOpen, setSelectOpen] = useState(false)
   const [selectState, setSelectState] = useState([])
@@ -33,11 +37,11 @@ export function Select({
 
   const veryfiMultiSelect = e => {
     const verify = selected.filter(elem => {
-      return elem.id === e.id ? elem : null
+      return elem[optionValue] === e[optionValue] ? elem : null
     })
 
     const res = selected.filter(elem => {
-      return elem.id !== e.id ? elem : null
+      return elem[optionValue] !== e[optionValue] ? elem : null
     })
 
     if (selected.length === 0) {
@@ -59,8 +63,8 @@ export function Select({
   const textButton = e => {
     if (!multiSelect) {
       const verifyObject = Object.keys(e)
-      if (e.name) {
-        return e.name
+      if (e[optionLabel]) {
+        return e[optionLabel]
       } else {
         return verifyObject.length ? e : textCustom[0]
       }
@@ -68,7 +72,7 @@ export function Select({
       if (e.length === 0) {
         return textCustom[0]
       } else if (e.length === 1) {
-        return `${textCustom[1]} - ${e[0].name} `
+        return `${textCustom[1]} - ${e[0][optionLabel]} `
       } else {
         return `${textCustom[2]} ( ${e.length} ) `
       }
@@ -77,19 +81,19 @@ export function Select({
 
   const veryfiSelected = e => {
     if (!multiSelect) {
-      return selected.id === e.id ? true : false
+      return selected[optionValue] === e[optionValue] ? true : false
     } else {
       if (selected.length === 0) {
         return false
       } else {
         const verify = selected.filter(elem => {
-          return elem.id === e.id ? elem : null
+          return elem[optionValue] === e[optionValue] ? elem : null
         })
 
         if (verify.length === 0) {
           return false
         } else {
-          return (verify[0] && verify[0].id) === e.id ? true : false
+          return (verify[0] && verify[0][optionValue]) === e[optionValue] ? true : false
         }
       }
     }
@@ -160,14 +164,23 @@ export function Select({
                 return (
                   <div
                     className={veryfiSelected(selectState[i]) ? 'selected' : ''}
-                    key={`${name}-${e.id}`}
+                    key={`${name}-${e[optionValue]}`}
                     onClick={e => [selectAction(selectState[i]), closeOnSelect ? openSelect(false) : null]}
                   >
                     {multiSelect ? <span className='checkelement'></span> : null}
-                    {e.name}
+                    {e[optionLabel]}
                   </div>
                 )
               })}
+              {selectState.length >= (charge.max ? charge.max : chargeDefault.max) ? (
+                <button
+                  className='btn secondary normal block'
+                  onClick={() => (charge.action ? charge.action : chargeDefault.action)}
+                  title={charge.text ? charge.text : chargeDefault.text}
+                >
+                  {charge.text ? charge.text : chargeDefault.text}
+                </button>
+              ) : null}
             </div>
           </div>
         ) : null}
@@ -176,8 +189,8 @@ export function Select({
   )
 }
 
-export function FilterAction(d, e) {
-  return d.filter(i => (e !== '' ? ([i.name].includes(e) ? i : null) : i))
+export function FilterAction(d, e, n = 'name') {
+  return d.filter(i => (e !== '' ? ([i[n]].includes(e) ? i : null) : i))
 }
 
 export function FilterSelect({

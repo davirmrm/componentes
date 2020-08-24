@@ -48,7 +48,7 @@
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  color: var(--secondary-color);
+  color: var(--input-color);
   cursor: pointer;
 
   display: flex;
@@ -60,6 +60,7 @@
 
 .form-box .input-actions button:hover {
   background-color: var(--secondary-bgh);
+  color: var(--secondary-color);
 }
 
 .form-box .input-actions button:active {
@@ -111,14 +112,15 @@ button.select-selected {
   color: var(--input-color);
   cursor: pointer;
   display: flex;
+  font-size: 1em;
   justify-content: space-between;
   padding: 8px 15px;
   width: 100%;
 }
 button.select-selected:after {
   content: '';
-  border-bottom: 2px solid var(--secondary-color);
-  border-left: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--input-color);
+  border-left: 2px solid var(--input-color);
   height: 8px;
   width: 8px;
   transform: rotate(-50deg);
@@ -166,10 +168,13 @@ button.select-selected.open:after {
   padding: 6px 10px;
   position: relative;
 }
-.select-box .select-options > div:hover,
-.select-box .select-options > div.selected {
+.select-box .select-options > div:hover {
   background-color: var(--secondary-bgh);
   color: var(--secondary-color);
+}
+.select-box .select-options > div.selected {
+  background-color: var(--secondary-bgh);
+  color: var(--input-color);
 }
 .select-box .select-options > div:active {
   position: relative;
@@ -266,7 +271,7 @@ button.select-selected.open:after {
 }
 .check-box .switch:after {
   content: '';
-  background-color: var(--secondary-color);
+  background-color: var(--input-color);
   border-radius: 50%;
   height: 20px;
   left: 0px;
@@ -303,7 +308,7 @@ button.select-selected.open:after {
 }
 .radio-box.checked .checkbox {
   background-color: var(--primary-bg);
-  border: 2px solid var(--primary-color);
   border-radius: 50%;
+  box-shadow: inset 0px 0px 0px 2px var(--primary-color);
   transition: all 0.3s;
 }

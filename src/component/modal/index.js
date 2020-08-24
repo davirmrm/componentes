@@ -2,7 +2,7 @@ import React from 'react'
 import Portal from '../potal'
 import './modal.css'
 
-import { IcoCross, IcoClose } from '../icon'
+import { IcoClose } from '../icon'
 
 export function Modal({ title = '', children, open = false, close = {}, closeText = 'Fechar', size = 'medium' }) {
   return (

@@ -1,10 +1,10 @@
 :root {
   --primary-bg: #0085a7;
-  --primary-bgh: #015d74;
+  --primary-bgh: #0069d9;
   --primary-color: #fff;
 
-  --secondary-bg: #222;
-  --secondary-bgh: #444;
+  --secondary-bg: #6c757d;
+  --secondary-bgh: #444444;
   --secondary-color: #fff;
 
   --success-bg: #008327;
@@ -16,14 +16,14 @@
   --error-color: #fff;
 
   --warning-bg: #c47500;
-  --warning-bgh: #915700;
+  --warning-bgh: #a06000;
   --warning-color: #fff;
 
   --scrollbar-track: #f1f1f1;
   --scrollbar-thumb: #3e5055;
   --scrollbar-thumbh: #2f3d41;
 
-  --background-page: #282c34;
+  --background-page: #222;
   --color-page: #fff;
 
   --input-bg: transparent;
@@ -31,7 +31,7 @@
   --input-color: #fff;
 
   --list-bg: transparent;
-  --list-bgh: #3c4049;
+  --list-bgh: #2f3031;
   --list-color: #fff;
 
   --modal-bg: #222;

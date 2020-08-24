@@ -247,8 +247,8 @@ export default () => {
           data={selectFakeDefault}
           listCustom={e => (
             <div className='acoes'>
-              <Button color='success' action={() => console.log(e, 'MERTA')}>
-                Learn React success
+              <Button color='primary' type='btn circle' action={() => console.log(e, 'MERTA')} title='Ver'>
+                <IcoEye />
               </Button>
             </div>
           )}

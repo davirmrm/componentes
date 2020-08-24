@@ -8,10 +8,16 @@ export function Button({
   color = 'secondary',
   variant = 'normal',
   size = 'medium',
+  title = '',
   disabled = false
 }) {
   return (
-    <button className={`${type} ${color} ${variant} ${size} `} onClick={action} title={children} disabled={disabled}>
+    <button
+      className={`${type} ${color} ${variant} ${size} `}
+      onClick={action}
+      title={title ? title : children}
+      disabled={disabled}
+    >
       {children}
     </button>
   )

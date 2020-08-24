@@ -9,15 +9,17 @@ export function Checkbox({
   type = 'checkbox',
   color = '',
   text = '',
-  disabled = false
+  disabled = false,
+  optionLabel = 'name',
+  optionValue = 'id'
 }) {
   const veryfiCheck = e => {
     const verify = checked.filter(elem => {
-      return elem.id === e.id ? elem : null
+      return elem[optionValue] === e[optionValue] ? elem : null
     })
 
     const res = checked.filter(elem => {
-      return elem.id !== e.id ? elem : null
+      return elem[optionValue] !== e[optionValue] ? elem : null
     })
 
     if (checked.length === 0) {
@@ -38,19 +40,19 @@ export function Checkbox({
 
   const veryfiChecked = e => {
     if (!options) {
-      return checked.id === e.id ? true : false
+      return checked[optionValue] === e[optionValue] ? true : false
     } else {
       if (checked.length === 0) {
         return false
       } else {
         const verify = checked.filter(elem => {
-          return elem.id === e.id ? elem : null
+          return elem[optionValue] === e[optionValue] ? elem : null
         })
 
         if (verify.length === 0) {
           return false
         } else {
-          return (verify[0] && verify[0].id) === e.id ? true : false
+          return (verify[0] && verify[0][optionValue]) === e[optionValue] ? true : false
         }
       }
     }
@@ -64,12 +66,12 @@ export function Checkbox({
           options.map(c => {
             return (
               <div
-                key={`${name}-${c.id}`}
+                key={`${name}-${c[optionValue]}`}
                 className={`check-box ${veryfiChecked(c) ? 'checked' : ''}`}
                 onClick={() => checkedAction(!disabled ? c : null)}
               >
                 <span className={type}></span>
-                {c.name}
+                {c[optionLabel]}
               </div>
             )
           })
