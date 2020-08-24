@@ -1,30 +1,3 @@
-:root {
-  --modal-bg: #222;
-  --modal-bgo: #000000c9;
-  --modal-bgh: #444;
-  --modal-color: #fff;
-
-  --modal-primary-bg: #0085a7;
-  --modal-primary-bgh: #015d74;
-  --modal-primary-color: #fff;
-
-  --modal-secondary-bg: #222;
-  --modal-secondary-bgh: #444;
-  --modal-secondary-color: #fff;
-
-  --modal-success-bg: #008327;
-  --modal-success-bgh: #00561a;
-  --modal-success-color: #fff;
-
-  --modal-error-bg: #940404;
-  --modal-error-bgh: #640101;
-  --modal-error-color: #fff;
-
-  --modal-warning-bg: #c47500;
-  --modal-warning-bgh: #915700;
-  --modal-warning-color: #fff;
-}
-
 #root-modal {
   position: fixed;
   top: 0px;
@@ -100,10 +73,11 @@
   color: var(--modal-color);
   cursor: pointer;
   display: flex;
-  font-size: 12px;
-  height: 25px;
+  font-size: 20px;
   justify-content: center;
-  width: 25px;
+  min-height: 25px;
+  min-width: 25px;
+  padding: 0;
 }
 
 #root-modal .modal-close:hover {

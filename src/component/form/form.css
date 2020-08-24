@@ -1,40 +1,14 @@
-:root {
-  --input-bg: transparent;
-  --input-bgh: #666;
-  --input-color: #fff;
-
-  --input-primary-bg: #0085a7;
-  --input-primary-bgh: #015d74;
-  --input-primary-color: #fff;
-
-  --input-secondary-bg: #222;
-  --input-secondary-bgh: #444;
-  --input-secondary-color: #fff;
-
-  --input-success-bg: #008327;
-  --input-success-bgh: #00561a;
-  --input-success-color: #fff;
-
-  --input-error-bg: #940404;
-  --input-error-bgh: #640101;
-  --input-error-color: #fff;
-
-  --input-warning-bg: #c47500;
-  --input-warning-bgh: #915700;
-  --input-warning-color: #fff;
-}
-
-.input-box {
+.form-box {
   position: relative;
 }
-.input-box label {
+.form-box label {
   color: var(--input-color);
   display: block;
   padding-bottom: 5px;
 }
 
-.input-box input,
-.input-box textarea {
+.form-box input,
+.form-box textarea {
   background-color: var(--input-bg);
   border: 1px solid var(--input-bgh);
   border-radius: 4px;
@@ -44,21 +18,21 @@
   width: 100%;
 }
 
-.input-box textarea {
+.form-box textarea {
   min-height: 100px;
   min-width: 100%;
   max-width: 100%;
 }
 
-.input-box input:focus,
-.input-box textarea:focus {
+.form-box input:focus,
+.form-box textarea:focus {
   outline: none;
 }
 
-.input-box > div {
+.form-box > div {
   position: relative;
 }
-.input-box .input-actions {
+.form-box .input-actions {
   align-items: center;
   display: flex;
   height: 100%;
@@ -67,64 +41,64 @@
   top: 0;
 }
 
-.input-box .input-actions button {
+.form-box .input-actions button {
   align-items: center;
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  color: var(--input-secondary-color);
+  color: var(--secondary-color);
   cursor: pointer;
 
   display: flex;
-  font-size: 12px;
-  height: 25px;
+  font-size: 20px;
+  height: 30px;
   justify-content: center;
-  width: 25px;
+  width: 30px;
 }
 
-.input-box .input-actions button:hover {
-  background-color: var(--input-secondary-bgh);
+.form-box .input-actions button:hover {
+  background-color: var(--secondary-bgh);
 }
 
-.input-box .input-actions button:active {
+.form-box .input-actions button:active {
   position: relative;
   top: 1px;
 }
-.input-box .input-actions button:focus {
+.form-box .input-actions button:focus {
   outline: none;
 }
 
-.input-box .textarea-actions {
+.form-box .textarea-actions {
   height: 100%;
   position: absolute;
   right: 4px;
   top: 4px;
 }
 
-.input-box .textarea-actions button {
+.form-box .textarea-actions button {
   align-items: center;
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  color: var(--input-secondary-color);
+  color: var(--secondary-color);
   cursor: pointer;
 
   display: flex;
-  font-size: 12px;
-  height: 25px;
+  font-size: 14px;
+  height: 30px;
   justify-content: center;
-  width: 25px;
+  width: 30px;
 }
 
-.input-box .textarea-actions button:hover {
-  background-color: var(--input-secondary-bgh);
+.form-box .textarea-actions button:hover {
+  background-color: var(--secondary-bgh);
 }
 
-.input-box .textarea-actions button:active {
+.form-box .textarea-actions button:active {
   position: relative;
   top: 1px;
 }
-.input-box .textarea-actions button:focus {
+.form-box .textarea-actions button:focus {
   outline: none;
 }
 
@@ -141,8 +115,8 @@ button.select-selected {
 }
 button.select-selected:after {
   content: '';
-  border-bottom: 2px solid var(--input-secondary-color);
-  border-left: 2px solid var(--input-secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  border-left: 2px solid var(--secondary-color);
   height: 8px;
   width: 8px;
   transform: rotate(-50deg);
@@ -192,8 +166,8 @@ button.select-selected.open:after {
 }
 .select-box .select-options > div:hover,
 .select-box .select-options > div.selected {
-  background-color: var(--input-secondary-bgh);
-  color: var(--input-secondary-color);
+  background-color: var(--secondary-bgh);
+  color: var(--secondary-color);
 }
 .select-box .select-options > div:active {
   position: relative;
@@ -211,7 +185,7 @@ button.select-selected.open:after {
 .select-box.multiselect .select-options .checkelement {
   border: 1px solid var(--input-bgh);
   border-radius: 4px;
-  color: var(--input-color);
+  color: var(--color);
   cursor: pointer;
   display: inline-block;
   height: 18px;
@@ -220,12 +194,12 @@ button.select-selected.open:after {
   width: 18px;
 }
 .select-box.multiselect .select-options > div.selected .checkelement {
-  background-color: var(--input-primary-bg);
+  background-color: var(--primary-bg);
 }
 .select-box.multiselect .select-options > div.selected .checkelement:after {
   content: '';
-  border-bottom: 2px solid var(--input-secondary-color);
-  border-left: 2px solid var(--input-secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  border-left: 2px solid var(--secondary-color);
   height: 9px;
   left: 1px;
   margin-right: 8px;
@@ -257,13 +231,13 @@ button.select-selected.open:after {
   width: 20px;
 }
 .check-box.checked .checkbox {
-  background-color: var(--input-primary-bg);
+  background-color: var(--primary-bg);
   transition: all 0.3s;
 }
 .check-box.checked .checkbox:after {
   content: '';
-  border-bottom: 3px solid var(--input-secondary-color);
-  border-left: 3px solid var(--input-secondary-color);
+  border-bottom: 3px solid var(--secondary-color);
+  border-left: 3px solid var(--secondary-color);
   height: 10px;
   left: 1px;
   position: absolute;
@@ -284,12 +258,12 @@ button.select-selected.open:after {
   width: 45px;
 }
 .check-box.checked .switch {
-  background-color: var(--input-primary-bg);
+  background-color: var(--primary-bg);
   transition: all 0.3s;
 }
 .check-box .switch:after {
   content: '';
-  background-color: var(--input-secondary-color);
+  background-color: var(--secondary-color);
   border-radius: 50%;
   height: 20px;
   left: 0px;
@@ -325,8 +299,8 @@ button.select-selected.open:after {
   width: 20px;
 }
 .radio-box.checked .checkbox {
-  background-color: var(--input-primary-bg);
-  border: 2px solid var(--input-primary-color);
+  background-color: var(--primary-bg);
+  border: 2px solid var(--primary-color);
   border-radius: 50%;
   transition: all 0.3s;
 }

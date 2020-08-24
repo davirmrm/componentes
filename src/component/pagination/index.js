@@ -33,7 +33,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
   return (
     <div className='pagination-custom'>
       <Button
-        type='btn-icon'
+        type='btn circle'
         color='secondary'
         action={() => reloadPaginate(data.pageNumber - 1)}
         disabled={data.pageNumber === 0 ? true : false}
@@ -43,7 +43,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
       <div className='page-item'>
         <input type='number' name='paginate' value={paginateTemp} onChange={event => changePaginate(event)} />
         <Button
-          type='btn-icon'
+          type='btn circle'
           color='secondary'
           action={() => reloadPaginate()}
           disabled={data.totalElements === 0 ? true : false}
@@ -53,7 +53,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
       </div>
 
       <Button
-        type='btn-icon'
+        type='btn circle'
         color='secondary'
         action={() => reloadPaginate(data.pageNumber + 1)}
         disabled={data.pageNumber >= data.totalPages - 1 ? true : false}

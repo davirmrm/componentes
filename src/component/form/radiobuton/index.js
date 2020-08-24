@@ -11,7 +11,7 @@ export function RadioButton({ options, action, checked, label, name, type = 'che
   }
 
   return (
-    <div className={`input-box ${color} `}>
+    <div className={`form-box ${color} `}>
       <label htmlFor={`id-${name}`}>{label}</label>
       <div>
         {options

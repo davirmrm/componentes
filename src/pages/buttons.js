@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '../component/button'
-import { IcoCross } from '../component/icon'
+import { IcoClose } from '../component/icon'
 
 export default () => {
   return (
@@ -81,52 +81,52 @@ export default () => {
         </Button>
       </div>
       <div>
-        <Button color='primary' type='btn-icon'>
-          <IcoCross />
+        <Button color='primary' type='btn circle'>
+          <IcoClose />
         </Button>
-        <Button color='secondary' type='btn-icon'>
-          <IcoCross />
+        <Button color='secondary' type='btn circle'>
+          <IcoClose />
         </Button>
-        <Button color='warning' type='btn-icon'>
-          <IcoCross />
+        <Button color='warning' type='btn circle'>
+          <IcoClose />
         </Button>
-        <Button color='danger' type='btn-icon'>
-          <IcoCross />
+        <Button color='danger' type='btn circle'>
+          <IcoClose />
         </Button>
-        <Button color='success' type='btn-icon'>
-          <IcoCross />
-        </Button>
-
-        <Button color='primary' type='btn-icon' variant='outlined'>
-          <IcoCross />
-        </Button>
-        <Button color='secondary' type='btn-icon' variant='outlined'>
-          <IcoCross />
-        </Button>
-        <Button color='warning' type='btn-icon' variant='outlined'>
-          <IcoCross />
-        </Button>
-        <Button color='danger' type='btn-icon' variant='outlined'>
-          <IcoCross />
-        </Button>
-        <Button color='success' type='btn-icon' variant='outlined'>
-          <IcoCross />
+        <Button color='success' type='btn circle'>
+          <IcoClose />
         </Button>
 
-        <Button color='primary' type='btn-icon' variant='outline'>
-          <IcoCross />
+        <Button color='primary' type='btn circle' variant='outlined'>
+          <IcoClose />
         </Button>
-        <Button color='secondary' type='btn-icon' variant='outline'>
-          <IcoCross />
+        <Button color='secondary' type='btn circle' variant='outlined'>
+          <IcoClose />
         </Button>
-        <Button color='warning' type='btn-icon' variant='outline'>
-          <IcoCross />
+        <Button color='warning' type='btn circle' variant='outlined'>
+          <IcoClose />
         </Button>
-        <Button color='danger' type='btn-icon' variant='outline'>
-          <IcoCross />
+        <Button color='danger' type='btn circle' variant='outlined'>
+          <IcoClose />
         </Button>
-        <Button color='success' type='btn-icon' variant='outline'>
-          <IcoCross />
+        <Button color='success' type='btn circle' variant='outlined'>
+          <IcoClose />
+        </Button>
+
+        <Button color='primary' type='btn circle' variant='outline'>
+          <IcoClose />
+        </Button>
+        <Button color='secondary' type='btn circle' variant='outline'>
+          <IcoClose />
+        </Button>
+        <Button color='warning' type='btn circle' variant='outline'>
+          <IcoClose />
+        </Button>
+        <Button color='danger' type='btn circle' variant='outline'>
+          <IcoClose />
+        </Button>
+        <Button color='success' type='btn circle' variant='outline'>
+          <IcoClose />
         </Button>
       </div>
     </>

@@ -16,9 +16,10 @@ export function Select({
   textCustom = ['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos'],
   filter = false
 }) {
-  const [selectState, setSelectState] = useState({})
+  const [selectOpen, setSelectOpen] = useState(false)
+  const [selectState, setSelectState] = useState([])
   const openSelect = e => {
-    setSelectState({ ...selectState, open: e })
+    setSelectOpen(e)
   }
 
   const ref = useRef()
@@ -27,7 +28,7 @@ export function Select({
   })
 
   useEffect(() => {
-    setSelectState({ open: false, options: options ? options : [] })
+    setSelectState(options ? options : [])
   }, [options])
 
   const veryfiMultiSelect = e => {
@@ -99,17 +100,17 @@ export function Select({
   }
 
   return (
-    <div className={`input-box ${color} `}>
+    <div className={`form-box ${color} `}>
       <label htmlFor={`id-${name}`}>{label}</label>
       <div ref={ref}>
         <button
-          className={`select-selected ${selectState.open ? 'open' : ''}`}
-          onClick={() => openSelect(!disabled ? !selectState.open : false)}
+          className={`select-selected ${selectOpen ? 'open' : ''}`}
+          onClick={() => openSelect(!disabled ? !selectOpen : false)}
         >
           {textButton(selected)}
         </button>
 
-        {selectState.open ? (
+        {selectOpen ? (
           <div className={`select-box ${multiSelect ? 'multiselect' : ''}`}>
             {multiSelect ? (
               <div className='select-actions-all'>
@@ -139,7 +140,7 @@ export function Select({
             ) : filter ? (
               <FilterSelect
                 clean={filter.clean}
-                action={e => setSelectState({ ...selectState, options: FilterAction(options, e) })}
+                action={e => setSelectState(FilterAction(options, e))}
                 filter={filter.text}
                 title={filter.title}
               />
@@ -155,12 +156,12 @@ export function Select({
                 </div>
               ) : null}
 
-              {selectState.options.map((e, i) => {
+              {selectState.map((e, i) => {
                 return (
                   <div
-                    className={veryfiSelected(selectState.options[i]) ? 'selected' : ''}
+                    className={veryfiSelected(selectState[i]) ? 'selected' : ''}
                     key={`${name}-${e.id}`}
-                    onClick={e => [selectAction(selectState.options[i]), closeOnSelect ? openSelect(false) : null]}
+                    onClick={e => [selectAction(selectState[i]), closeOnSelect ? openSelect(false) : null]}
                   >
                     {multiSelect ? <span className='checkelement'></span> : null}
                     {e.name}

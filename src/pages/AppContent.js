@@ -21,7 +21,9 @@ import {
   RadioButton,
   FilterSelect,
   FilterAction,
-  Paginate
+  Paginate,
+  IcoEye,
+  IcoEyeBlocked
 } from '../component'
 const headDefault = [
   {
@@ -77,7 +79,7 @@ export default () => {
   const hanldeChange = e => {
     setInputsList({ ...inputsList, [e.target.name]: e.target.value })
   }
-  console.log(inputsList, 'inputsList')
+
   return (
     <div>
       <Alert />
@@ -89,6 +91,20 @@ export default () => {
           </p>
           <button
             className='App-link'
+            onClick={() => dispatch(AddAlert('primary', 'Alerta mensagem' + (alert.length + 1)))}
+            rel='noopener noreferrer'
+          >
+            Learn React
+          </button>
+          <button
+            className='App-link'
+            onClick={() => dispatch(AddAlert('secondary', 'Alerta mensagem' + (alert.length + 1)))}
+            rel='noopener noreferrer'
+          >
+            Learn React
+          </button>
+          <button
+            className='App-link'
             onClick={() => dispatch(AddAlert('success', 'Alerta mensagem' + (alert.length + 1)))}
             rel='noopener noreferrer'
           >
@@ -97,6 +113,13 @@ export default () => {
           <button
             className='App-link'
             onClick={() => dispatch(AddAlert('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
+            rel='noopener noreferrer'
+          >
+            Learn React
+          </button>
+          <button
+            className='App-link'
+            onClick={() => dispatch(AddAlert('warning', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
             rel='noopener noreferrer'
           >
             Learn React
@@ -118,7 +141,7 @@ export default () => {
           value={inputsList.senha}
         >
           <ActionForm action={e => setSenha(!senha)} title={senha ? 'visivel' : 'invisivel'}>
-            <IcoClose />
+            {senha ? <IcoEye /> : <IcoEyeBlocked />}
           </ActionForm>
         </Input>
 
@@ -158,7 +181,7 @@ export default () => {
           selected={inputsList.multiselect}
           // textCustom={['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos']}
           multiSelect
-          // closeOnSelect={false}
+          closeOnSelect={false}
           // filter={{
           //   clean: <IcoClose />,
           //   text: <IcoSearch />,
@@ -169,7 +192,7 @@ export default () => {
             // clean={<IcoClose />}
             // filter={<IcoSearch />}
             action={e => setselectFake(FilterAction(selectFakeDefault, e))}
-            title='Filtrardd'
+            title='Filtrar'
           />
         </Select>
 
@@ -221,8 +244,8 @@ export default () => {
       <div>
         <List
           head={headDefault}
-          content={selectFakeDefault}
-          listActions={e => (
+          data={selectFakeDefault}
+          listCustom={e => (
             <div className='acoes'>
               <Button color='success' action={() => console.log(e, 'MERTA')}>
                 Learn React success

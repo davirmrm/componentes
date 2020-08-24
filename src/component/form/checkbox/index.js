@@ -57,7 +57,7 @@ export function Checkbox({
   }
 
   return (
-    <div className={`input-box ${color} `}>
+    <div className={`form-box ${color} `}>
       <label htmlFor={`id-${name}`}>{label}</label>
       <div>
         {options ? (

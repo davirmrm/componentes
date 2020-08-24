@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Portal from '../potal'
 import './alert.css'
 
-import { IcoCross } from '../icon'
+import { IcoClose } from '../icon'
 import { RemoveAlert } from './actions'
 export * from './actions'
 
@@ -24,7 +24,7 @@ export function Alert() {
           <div key={alert.id} className={`box-alert alert-${alert.type}`}>
             <div dangerouslySetInnerHTML={{ __html: alert.mensage }}></div>
             <button className='alert-close' onClick={() => dispatch(RemoveAlert(alert.id))}>
-              <IcoCross />
+              <IcoClose />
             </button>
           </div>
         )

@@ -1,3 +1,5 @@
+import './component.css'
+
 export * from './alert'
 export * from './button'
 export * from './form'

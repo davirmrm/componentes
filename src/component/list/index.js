@@ -1,8 +1,7 @@
 import React from 'react'
 import './list.css'
 
-export function List({ head = [], content = [], listActions = () => null, children }) {
-  console.log(head, 'head', children)
+export function List({ head = [], data = [], listCustom = () => null, children }) {
   return (
     <table className='list-box'>
       <thead>
@@ -17,13 +16,13 @@ export function List({ head = [], content = [], listActions = () => null, childr
         </tr>
       </thead>
       <tbody>
-        {content.map(container => {
+        {data.map(container => {
           return (
             <tr key={container.id}>
               {head.map(header => {
                 return (
                   <td className={header.className} key={`${container.id}-${header.colunm}`}>
-                    {container[header.colunm] ? container[header.colunm] : listActions(container)}
+                    {container[header.colunm] ? container[header.colunm] : listCustom(container, header.colunm)}
                   </td>
                 )
               })}

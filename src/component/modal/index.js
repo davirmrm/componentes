@@ -2,7 +2,7 @@ import React from 'react'
 import Portal from '../potal'
 import './modal.css'
 
-import { IcoCross } from '../icon'
+import { IcoCross, IcoClose } from '../icon'
 
 export function Modal({ title = '', children, open = false, close = {}, closeText = 'Fechar', size = 'medium' }) {
   return (
@@ -50,7 +50,7 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
         <div className='modal-header'>
           {title}
           <button className='modal-close' onClick={close} title={closeText}>
-            <IcoCross />
+            <IcoClose />
           </button>
         </div>
 

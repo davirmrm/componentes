@@ -2,7 +2,7 @@ import React from 'react'
 
 export function Textarea({ children, action, value, label, name, color = '' }) {
   return (
-    <div className={`input-box ${color} `}>
+    <div className={`form-box ${color} `}>
       <label htmlFor={`id-${name}`}>{label}</label>
       <div>
         <textarea name={name} id={`id-${name}`} onChange={action}>

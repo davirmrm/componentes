@@ -1,8 +1,3 @@
-:root {
-  --list-bg: #282c34;
-  --list-bgh: #3c4049;
-  --list-color: #fff;
-}
 .list-box {
   border-top: 1px solid var(--list-bgh);
   border-spacing: 0;

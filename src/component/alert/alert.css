@@ -1,34 +1,11 @@
-:root {
-  --alert-primary-bg: #0085a7;
-  --alert-primary-bgh: #015d74;
-  --alert-primary-color: #fff;
-
-  --alert-secondary-bg: #222;
-  --alert-secondary-bgh: #444;
-  --alert-secondary-color: #fff;
-
-  --alert-success-bg: #008327;
-  --alert-success-bgh: #00561a;
-  --alert-success-color: #fff;
-
-  --alert-error-bg: #940404;
-  --alert-error-bgh: #640101;
-  --alert-error-color: #fff;
-
-  --alert-warning-bg: #c47500;
-  --alert-warning-bgh: #915700;
-  --alert-warning-color: #fff;
-}
-
 #root-alert {
   position: fixed;
   top: 10px;
-  /* left: 10px; */
   right: 10px;
   z-index: 999;
 }
-#root-alert .box-alert {
-  background-color: #fff;
+.box-alert {
+  background-color: var(class);
   border: 1px solid #f1f1f1;
   border-radius: 4px;
   color: #333;
@@ -38,10 +15,10 @@
   margin-bottom: 8px;
   min-width: 250px;
 }
-#root-alert .box-alert > div {
+.box-alert > div {
   padding: 8px 8px 8px 15px;
 }
-#root-alert .alert-close {
+.alert-close {
   align-items: center;
   align-self: flex-start;
   background-color: transparent;
@@ -50,87 +27,88 @@
   color: #333;
   cursor: pointer;
   display: flex;
-  font-size: 12px;
-  height: 25px;
+  font-size: 20px;
   justify-content: center;
+  min-height: 25px;
+  min-width: 25px;
   margin: 4px 4px 0 0;
-  width: 25px;
+  padding: 0;
 }
-#root-alert .alert-close:hover {
+.alert-close:hover {
   background-color: #fff;
 }
-#root-alert .alert-close:focus {
+.alert-close:focus {
   position: relative;
   top: 1px;
   outline: none;
 }
 
-#root-alert .alert-primary {
-  background-color: var(--alert-primary-bg);
-  border: 1px solid var(-alert--primary-bgh);
+.alert-primary {
+  background-color: var(--primary-bg);
+  border: 1px solid var(---primary-bgh);
   color: var(--primary-color);
 }
-#root-alert .alert-primary .alert-close {
-  background-color: var(--alert-primary-bg);
-  color: var(--alert-primary-color);
+.alert-primary .alert-close {
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
 }
-#root-alert .alert-primary .alert-close:hover {
-  background-color: var(--alert-primary-bgh);
-  color: var(--alert-primary-color);
-}
-
-#root-alert .alert-secondary {
-  background-color: var(--alert-secondary-bg);
-  border: 1px solid var(--alert-secondary-bgh);
-  color: var(--alert-secondary-color);
-}
-#root-alert .alert-secondary .alert-close {
-  background-color: var(--alert-secondary-bg);
-  color: var(--alert-secondary-color);
-}
-#root-alert .alert-secondary .alert-close:hover {
-  background-color: var(--alert-secondary-bgh);
-  color: var(--alert-secondary-color);
+.alert-primary .alert-close:hover {
+  background-color: var(--primary-bgh);
+  color: var(--primary-color);
 }
 
-#root-alert .alert-success {
-  background-color: var(--alert-success-bg);
-  border: 1px solid var(--alert-success-bgh);
-  color: var(--alert-success-color);
+.alert-secondary {
+  background-color: var(--secondary-bg);
+  border: 1px solid var(--secondary-bgh);
+  color: var(--secondary-color);
 }
-#root-alert .alert-success .alert-close {
-  background-color: var(--alert-success-bg);
-  color: var(--alert-success-color);
+.alert-secondary .alert-close {
+  background-color: var(--secondary-bg);
+  color: var(--secondary-color);
 }
-#root-alert .alert-success .alert-close:hover {
-  background-color: var(--alert-success-bgh);
-  color: var(--alert-success-color);
-}
-
-#root-alert .alert-error {
-  background-color: var(--alert-error-bg);
-  border: 1px solid var(--alert-error-bgh);
-  color: var(--alert-error-color);
-}
-#root-alert .alert-error .alert-close {
-  background-color: var(--alert-error-bg);
-  color: var(--alert-error-color);
-}
-#root-alert .alert-error .alert-close:hover {
-  background-color: var(--alert-error-bgh);
-  color: var(--alert-error-color);
+.alert-secondary .alert-close:hover {
+  background-color: var(--secondary-bgh);
+  color: var(--secondary-color);
 }
 
-#root-alert .alert-warning {
-  background-color: var(--alert-warning-bg);
-  border: 1px solid var(--alert-warning-bgh);
-  color: var(--alert-warning-color);
+.alert-success {
+  background-color: var(--success-bg);
+  border: 1px solid var(--success-bgh);
+  color: var(--success-color);
 }
-#root-alert .alert-warning .alert-close {
-  background-color: var(--alert-warning-bg);
-  color: var(--alert-warning-color);
+.alert-success .alert-close {
+  background-color: var(--success-bg);
+  color: var(--success-color);
 }
-#root-alert .alert-warning .alert-close:hover {
-  background-color: var(--alert-warning-bgh);
-  color: var(--alert-warning-color);
+.alert-success .alert-close:hover {
+  background-color: var(--success-bgh);
+  color: var(--success-color);
+}
+
+.alert-error {
+  background-color: var(--error-bg);
+  border: 1px solid var(--error-bgh);
+  color: var(--error-color);
+}
+.alert-error .alert-close {
+  background-color: var(--error-bg);
+  color: var(--error-color);
+}
+.alert-error .alert-close:hover {
+  background-color: var(--error-bgh);
+  color: var(--error-color);
+}
+
+.alert-warning {
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-bgh);
+  color: var(--warning-color);
+}
+.alert-warning .alert-close {
+  background-color: var(--warning-bg);
+  color: var(--warning-color);
+}
+.alert-warning .alert-close:hover {
+  background-color: var(--warning-bgh);
+  color: var(--warning-color);
 }
