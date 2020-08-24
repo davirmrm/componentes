@@ -15,7 +15,7 @@
 }
 
 .list-box tbody tr:hover td {
-  background-color: var(--list-bgh);
+  background-color: var(--list-bg);
 }
 .list-box .actions {
   white-space: nowrap;
