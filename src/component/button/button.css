@@ -5,6 +5,7 @@
   color: var(--color-page);
   cursor: pointer;
   display: inline-block;
+  font-size: 1em;
   padding: 8px 15px;
 }
 
@@ -12,10 +13,11 @@
   align-items: center;
   border-radius: 50px;
   display: inline-flex;
-  min-height: 34px;
+  font-size: 1em;
   justify-content: center;
-  padding: 8px;
+  min-height: 34px;
   min-width: 34px;
+  padding: 6px;
 }
 
 .btn:active {
@@ -164,6 +166,7 @@
   color: var(--color-page);
   cursor: pointer;
   display: inline-block;
+  font-size: 1em;
 }
 
 .link:active {
