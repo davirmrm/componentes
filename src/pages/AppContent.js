@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import './content.css'
 
 import { listarAlerts } from '../layout/redux/AppActions'
 import { useDispatch, useSelector } from 'react-redux'
@@ -67,7 +68,8 @@ export default () => {
     multiselect: [],
     checkboxg: [],
     checkboxSwitchg: [],
-    radio: {}
+    radio: {},
+    multiselectcustom: {}
   })
   const [selectFake, setselectFake] = useState(selectFakeDefault)
   const alert = useSelector(state => state.alerts)
@@ -126,7 +128,7 @@ export default () => {
           </button>
         </header>
       </div>
-      <div>
+      <div className='content-page'>
         <Input label='label' name='input' action={e => hanldeChange(e)} value={inputsList.input}>
           <ActionForm action={e => setInputsList({ ...inputsList, input: '' })} title='Limpar'>
             <IcoClose />
@@ -196,6 +198,19 @@ export default () => {
           />
         </Select>
 
+        <Select
+          label='label multiselect'
+          name='multiselectcustom'
+          action={e => hanldeChange(e)}
+          options={selectFake}
+          selected={inputsList.multiselectcustom}
+          optionCustom={e => (
+            <div>
+              <span>{e.id}</span> <span>{e.name}</span>
+            </div>
+          )}
+        ></Select>
+
         <Checkbox
           label='label checkbox'
           // type='number'
@@ -247,7 +262,7 @@ export default () => {
           data={selectFakeDefault}
           listCustom={e => (
             <div className='acoes'>
-              <Button color='primary' type='btn circle' action={() => console.log(e, 'MERTA')} title='Ver'>
+              <Button color='primary' type='btn circle' action={() => null} title='Ver'>
                 <IcoEye />
               </Button>
             </div>
@@ -255,9 +270,9 @@ export default () => {
         />
         <Paginate />
       </div>
-
-      <ButonsPage />
-
+      <div className='content-buttons'>
+        <ButonsPage />
+      </div>
       <Modal
         title={'Learn React Title'}
         // size='fullScreen'

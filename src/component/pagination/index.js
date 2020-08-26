@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './pagination.css'
 import { Button } from '../button'
+// import { IcoArrowForward, IcoArrowBack, IcoSpinner } from '../icon'
 
 const textDefault = {
   de: 'de',
@@ -9,6 +10,9 @@ const textDefault = {
   next: 'Próximo',
   before: 'Anterior',
   reload: 'Atualizar'
+  // next: <IcoArrowForward />,
+  // before: <IcoArrowBack />,
+  // reload: <IcoSpinner />
 }
 export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements: 0 }, action, text = textDefault }) {
   const [paginateTemp, setPaginateTemp] = useState(String(data.pageNumber ? data.pageNumber : 0 + 1))

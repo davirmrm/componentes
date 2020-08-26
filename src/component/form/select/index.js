@@ -18,7 +18,8 @@ export function Select({
   filter = false,
   charge = chargeDefault,
   optionLabel = 'name',
-  optionValue = 'id'
+  optionValue = 'id',
+  optionCustom = ''
 }) {
   const [selectOpen, setSelectOpen] = useState(false)
   const [selectState, setSelectState] = useState([])
@@ -168,7 +169,7 @@ export function Select({
                     onClick={e => [selectAction(selectState[i]), closeOnSelect ? openSelect(false) : null]}
                   >
                     {multiSelect ? <span className='checkelement'></span> : null}
-                    {e[optionLabel]}
+                    {optionCustom ? optionCustom(e) : e[optionLabel]}
                   </div>
                 )
               })}
