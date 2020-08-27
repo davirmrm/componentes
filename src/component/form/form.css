@@ -47,15 +47,15 @@
   align-items: center;
   background-color: transparent;
   border: none;
-  border-radius: 50%;
+  border-radius: 50px;
   color: var(--input-color);
   cursor: pointer;
 
   display: flex;
   font-size: 20px;
-  height: 30px;
   justify-content: center;
-  width: 30px;
+  min-height: 30px;
+  min-width: 30px;
 }
 
 .form-box .input-actions button:hover {

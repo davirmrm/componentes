@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
-import useOutsideClick from '../../useOusideClick'
-import { IcoClose, IcoSearch } from '../../icon'
+import useOutsideClick from '../../useOusideClick/useoutsideclick'
+import { IcoClose, IcoSearch } from '../../icon/icon'
 
 const chargeDefault = { max: 500, text: 'Mais itens', action: () => null }
 export function Select({

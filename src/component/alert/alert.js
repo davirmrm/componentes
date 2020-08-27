@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Portal from '../potal'
+import Portal from '../potal/portal'
 import './alert.css'
 
-import { IcoClose } from '../icon'
+import { IcoClose } from '../icon/icon'
 import { RemoveAlert } from './actions'
 export * from './actions'
 

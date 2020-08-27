@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './pagination.css'
-import { Button } from '../button'
+import { Button } from '../button/button'
 // import { IcoArrowForward, IcoArrowBack, IcoSpinner } from '../icon'
 
 const textDefault = {

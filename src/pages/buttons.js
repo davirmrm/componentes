@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../component/button'
-import { IcoClose } from '../component/icon'
+import { Button } from '../component/button/button'
+import { IcoClose } from '../component/icon/icon'
 
 export default () => {
   return (

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
 import appState from './redux/AppReducer'
-import alerts from '../component/alert/alerts'
+import alerts from '../component/alert/alertsRedux'
 
 export const rootReducer = combineReducers({
   alerts,
