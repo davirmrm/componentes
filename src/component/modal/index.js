@@ -24,7 +24,7 @@ const fulscren = ({ title, children, closeText, close }) => {
         {children.map(e => {
           return e && e.type && e.type.name === 'ActionsModal' ? (
             <div key={e.type} className='modal-actions'>
-              <button className='btn secondary' onClick={close}>
+              <button className='btn secondary normal' onClick={close}>
                 {closeText}
               </button>
               {e}

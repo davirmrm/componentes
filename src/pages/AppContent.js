@@ -83,7 +83,7 @@ export default () => {
   }
 
   return (
-    <div>
+    <>
       <Alert />
       <div className='App'>
         <header className='App-header'>
@@ -199,7 +199,7 @@ export default () => {
         </Select>
 
         <Select
-          label='label multiselect'
+          label='label multiselect custom'
           name='multiselectcustom'
           action={e => hanldeChange(e)}
           options={selectFake}
@@ -275,27 +275,117 @@ export default () => {
       </div>
       <Modal
         title={'Learn React Title'}
-        // size='fullScreen'
+        size='fullScreen'
+        // size='large'
         open={open}
         close={() => setOpen(false)}
         closeText='Fechar'
       >
-        Learn React Content
+        Learn React Content Learn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React success Learn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React success
+        Learn React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React success Learn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React success Learn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React success Learn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React success Learn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React success Learn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React success Learn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React success Learn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React success Learn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React success
+        Learn React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React success Learn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React success Learn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React success Learn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React success Learn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React success Learn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React success Learn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React success Learn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React success Learn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React success
+        Learn React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React success Learn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React success Learn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React success Learn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React success Learn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React success Learn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React successLearn React successLearn React
+        successLearn React successLearn React successLearn React successLearn React successLearn React successLearn
+        React successLearn React successLearn React successLearn React success
         <ActionsModal>
           <Button
             color='success'
             action={() => dispatch(AddAlert('success', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
           >
-            Learn React success
+            Alert success
           </Button>
           <Button
             color='danger'
             action={() => dispatch(AddAlert('error', `<strong>Alerta</strong> mensagem ${alert.length + 1}`))}
           >
-            Learn React error
+            Alert danger
           </Button>
         </ActionsModal>
       </Modal>
-    </div>
+    </>
   )
 }

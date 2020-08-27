@@ -9,7 +9,8 @@
 
   display: block;
   height: 100vh;
-  padding-top: 10px;
+  overflow: auto;
+  padding: 10px 0 20px 0;
   width: 100%;
 }
 
@@ -49,6 +50,7 @@
 
 #root-modal .fullScreen .modal-content {
   overflow: auto;
+  height: calc(100% - 60px);
 }
 
 #root-modal .modal-content {

@@ -1,6 +1,10 @@
 body {
   background-color: var(--background-page);
 }
+.box-app {
+  overflow: auto;
+  height: 100%;
+}
 
 [hidden],
 .hidden {

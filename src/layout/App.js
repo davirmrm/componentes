@@ -4,8 +4,8 @@ import './App.css'
 
 export default () => {
   return (
-    <>
+    <div className='box-app'>
       <AppRoutes />
-    </>
+    </div>
   )
 }
