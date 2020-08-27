@@ -21,8 +21,10 @@ body {
   width: 100vw;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+[disabled],
+.disabled {
+  opacity: 0.7;
+  cursor: default;
 }
 
 .App-logo {

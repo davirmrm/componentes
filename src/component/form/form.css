@@ -271,8 +271,10 @@ button.select-selected.open:after {
 }
 .check-box .switch:after {
   content: '';
-  background-color: var(--input-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--input-bgh);
   border-radius: 50%;
+  box-shadow: inset 0px 0px 3px 0px var(--input-bgh);
   height: 20px;
   left: 0px;
   position: absolute;
