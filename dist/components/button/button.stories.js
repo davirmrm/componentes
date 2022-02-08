@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.loader = exports["default"] = void 0;
+exports.button = exports["default"] = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -15,18 +15,18 @@ var _addonKnobs = require("@storybook/addon-knobs");
 
 var _CenterView = _interopRequireDefault(require("../CenterView"));
 
-var _dist = require("../../../dist");
+var _ = require("../..");
 
 var _default = {
-  title: 'Loader',
-  component: _dist.Loader,
+  title: 'Button',
+  component: _.Button,
   decorators: [_addonKnobs.withKnobs]
 };
 exports["default"] = _default;
 
-var _ref = /*#__PURE__*/_react["default"].createElement(_dist.Loader, null);
+var _ref = /*#__PURE__*/_react["default"].createElement(_.Button, null, "button");
 
-var loader = function loader() {
+var button = function button() {
   return /*#__PURE__*/_react["default"].createElement(_CenterView["default"], {
     bg: {
       backgroundColor: '#171819'
@@ -34,4 +34,4 @@ var loader = function loader() {
   }, _ref);
 };
 
-exports.loader = loader;
+exports.button = button;

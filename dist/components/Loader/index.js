@@ -5,7 +5,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
+exports.Loader = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
@@ -55,8 +55,7 @@ var Loader = function Loader(_ref) {
   }));
 };
 
+exports.Loader = Loader;
 process.env.NODE_ENV !== "production" ? Loader.propTypes = {
   style: _propTypes["default"].object
 } : void 0;
-var _default = Loader;
-exports["default"] = _default;

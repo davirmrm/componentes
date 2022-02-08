@@ -8,16 +8,16 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "Loader", {
   enumerable: true,
   get: function get() {
-    return _Loader["default"];
+    return _loader["default"];
   }
 });
-Object.defineProperty(exports, "Alert", {
+Object.defineProperty(exports, "Button", {
   enumerable: true,
   get: function get() {
-    return _Alert["default"];
+    return _button["default"];
   }
 });
 
-var _Loader = _interopRequireDefault(require("./Loader"));
+var _loader = _interopRequireDefault(require("./loader"));
 
-var _Alert = _interopRequireDefault(require("./Alert"));
+var _button = _interopRequireDefault(require("./button"));

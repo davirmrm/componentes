@@ -34,8 +34,4 @@ Pronto agora basta instalar as dependências com `npm install` e seguir um dos f
 
 ## DOC
 
-- [Boas Práticas](./doc/BEST_PRACTICES.md)
-
 - [Commandos do Projeto](./doc/COMMANDS.md)
-
-- [Estrutura do Projeto](./doc/PROJECT_STRUCTURE.md)

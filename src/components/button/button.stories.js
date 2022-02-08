@@ -4,16 +4,17 @@ import { action } from '@storybook/addon-actions';
 import { withKnobs, select } from '@storybook/addon-knobs';
 import CenterView from '../CenterView';
 
-import { Loader } from '..';
+import { Button } from '.';
 
 export default {
-  title: 'Loader',
-  component: Loader,
+  title: 'Button',
+  component: Button,
   decorators: [withKnobs],
 };
-export const loader = () => (
+export const button = () => (
   <CenterView bg={{ backgroundColor: '#171819' }}>
-    <Loader>
-    </Loader>
+    <Button>
+      button
+    </Button>
   </CenterView>
 );

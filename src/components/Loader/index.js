@@ -5,7 +5,7 @@ import Lottie from 'react-lottie';
 import { loader as loaderJSON } from './data';
 
 
-const Loader = ({style = {}, loop = true, autoplay = true, animationData = loaderJSON, rendererSettings = { preserveAspectRatio: 'xMidYMid slice' }, height = 100, width = 100, isStopped = false, isPaused = false}) => {
+export const Loader = ({style = {}, loop = true, autoplay = true, animationData = loaderJSON, rendererSettings = { preserveAspectRatio: 'xMidYMid slice' }, height = 100, width = 100, isStopped = false, isPaused = false}) => {
   return (
     <div className='loader'>
       <Lottie
@@ -22,5 +22,3 @@ const Loader = ({style = {}, loop = true, autoplay = true, animationData = loade
 Loader.propTypes = {
   style: PropTypes.object
 }
-
-export default Loader;
