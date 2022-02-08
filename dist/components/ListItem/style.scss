@@ -1,0 +1,30 @@
+@import '../../assets/styles/';
+
+.listItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .element {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .icon {
+      fill: color('neutral', '200');
+      cursor: pointer;
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+  &.click {
+    .infoItemHeading, .infoItem {
+      cursor: pointer;
+    }
+  }
+  .separator {
+    height: 1px;
+    width: 100%;
+    background-color: color('neutral', '500');
+    margin: .5rem 0;
+  }
+}

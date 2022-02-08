@@ -1,0 +1,32 @@
+@import '../../assets/styles/';
+
+.dropdownDateAndHourContainer {
+  width: 18.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35), 0px 0px 1px rgba(0, 0, 0, 0.5);
+  padding: .5rem 1rem 1rem 1rem;
+
+  & > .line {
+    display: flex;
+    margin-bottom: .5rem;
+    align-items: flex-end;
+    & > *:first-child {
+      margin-right: .5rem;
+    }
+  }
+  & > .buttons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    & > *:first-child {
+      margin-right: .5rem;
+    }
+  }
+
+  // Colors
+  &.primary {
+    background-color: color('background', 'secondary');
+  }
+  &.secondary {
+    background-color: color('neutral', '700');
+  }
+}

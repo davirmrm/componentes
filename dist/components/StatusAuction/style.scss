@@ -1,0 +1,18 @@
+@import '../../assets/styles/';
+
+.statusAuction {
+  margin: auto;
+  width: .625rem;
+  height: .625rem;
+  min-width: .625rem;
+  min-height: .625rem;
+  border-radius: 100px;
+  display: flex;
+  margin-top: 1rem;
+  &.success {
+    background-color: color('state', 'success');
+  }
+  &.danger {
+    background-color: color('state', 'danger');
+  }
+}

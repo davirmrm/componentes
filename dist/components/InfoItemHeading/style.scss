@@ -1,0 +1,12 @@
+@import '../../assets/styles/';
+
+.infoItemHeading {
+  display: flex;  
+  flex-direction: column;
+  padding: 5px 10px;
+  color: color('neutral', '100');
+  @include tipography('subheading');
+  & > span {
+    @include tipography('heading');
+  }
+}

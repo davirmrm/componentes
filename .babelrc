@@ -1,0 +1,52 @@
+{
+  "ignore": [
+    "node_nodules/**/*"
+  ],
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ],
+  "plugins": [
+    "dynamic-import-webpack",
+    "css-modules-transform",
+    [
+      "module-resolver", {
+        "root": ["./src/"],
+        "alias": {
+          "@atoms": "./src/components/atoms",
+          "@molecules": "./src/components/molecules",
+          "@organisms": "./src/components/organisms",
+          "@templates": "./src/components/templates",
+          "@designSystem": "./src/designSystem",
+          "@assets": "./src/assets",
+          "@utils": "./src/utils"
+        }
+      }
+    ],
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-object-rest-spread",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/plugin-transform-object-assign",
+    "@babel/plugin-transform-runtime",
+    "@babel/plugin-proposal-optional-chaining",
+    "transform-react-constant-elements",
+    "transform-dev-warning",
+    "react-remove-properties",
+    [
+      "transform-react-remove-prop-types",
+      {
+        "mode": "unsafe-wrap"
+      }
+    ]
+  ]
+}

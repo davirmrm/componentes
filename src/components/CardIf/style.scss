@@ -1,0 +1,28 @@
+@import '../../assets/styles/';
+
+.cardIf {
+  height: 4.625rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: color('neutral', '700');
+  justify-content: space-between;
+  border-radius: 4px;
+  color: color('foreground', 'secondary');
+  fill: color('neutral', '500');
+  cursor: pointer;
+  &:hover {
+    background-color: color('neutral', '600');
+  }
+  &:active {
+    background-color: color('neutral', '800');
+  }
+  h3 {
+    @include tipography('heading');
+  }
+  h5 {
+    margin-top: 2px;
+    @include tipography('subheading');
+  }
+}

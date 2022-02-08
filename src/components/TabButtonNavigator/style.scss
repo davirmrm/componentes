@@ -1,0 +1,8 @@
+@import '../../assets/styles/';
+
+.tabButtonNavigatorContainer {
+  display: flex;
+  & > * + * {
+    margin-left: .5rem;
+  }
+}

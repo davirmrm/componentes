@@ -1,0 +1,73 @@
+@import '../../assets/styles/';
+
+.progressBar {
+  display: flex;
+  flex-direction: column;
+
+  .progressBar_content {
+    margin-bottom: .125rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    & > p {
+      @include tipography('display-small');
+    }
+    .progressBar_title {
+      display: flex;
+      p {
+        margin-right: .5rem;
+        @include tipography('caption');
+      }
+    }
+    .icon {
+      fill: color('neutral', '500');
+      cursor: pointer;
+      &:hover {
+        opacity: .8;
+      }
+    }
+    & > .icon {
+      position: absolute;
+      right: -1.5rem;
+    }
+  }
+  
+  .progressBar_barStyle {
+    height: .5rem;
+    border-radius: 3px;
+  }
+  
+  .progressBar_barBg {
+    @extend .progressBar_barStyle;
+    background-color: color('neutral', '600');
+    width: 100%;
+
+    .progressBar_barContent {
+      @extend .progressBar_barStyle;
+      width: 0;
+      transition: width .5s ease-out;
+      max-width: 100%;
+      position: relative;
+      & > span {
+        white-space: nowrap;
+        position: absolute;
+        transform: translateX(50%);
+        right: 0;
+        top: 1rem;
+      }
+      &.success {
+        background-color: color('state', 'success');
+      }
+      &.warning {
+        background-color: color('state', 'warning');
+      }
+      &.danger {
+        background-color: color('state', 'danger');
+      }
+      &.inative {
+        background-color: color('neutral', '500');
+      }
+    }
+  }
+}

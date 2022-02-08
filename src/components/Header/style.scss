@@ -1,0 +1,51 @@
+@import '../../assets/styles/';
+
+.header {
+  display: flex;
+  align-items: center;
+  height: 7.25rem;
+  padding-right: 2rem;
+  .content {
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    & > .statusBar {
+        width: 18.75rem;
+    }
+    & > .progressBar {
+      min-width: 18.75rem;
+      width: 35vw;
+      margin-right: 10%;
+    }
+    & > .rightInfo {
+      text-align: right;
+      white-space: nowrap;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .dropdownHeader {
+        padding-left: 0;
+        span {
+          color: color('neutral', '500');
+          div {
+            display: block;
+            min-width: 140px;
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+          }
+        }
+        svg {
+          fill: color('neutral', '500');
+        }
+      }
+      span {
+        @include tipography('caption');
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import '../../assets/styles/';
+
+.tabNav {
+  display: flex;
+  width: 100%;
+  & > .linkBox {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    height: 4rem;
+    color: color('neutral', '400');
+    &.tabNavLinkActive {
+      color: color('neutral', '100');
+      .tabNavLink {
+        border-bottom-color:color('neutral', '100');
+      }
+    }
+    .tabNavLink {
+      border-bottom: 4px solid color('neutral', '400');
+      width: 100%;
+      padding-bottom: .75rem;
+      height: 1.25rem;
+      @include tipography('button');
+      user-select: none;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      .counter {
+        margin-left: .25rem;
+      }
+    }
+    &:hover {
+      .tabNavLink {
+        transition: all .2s ease-out;
+        color: color('neutral', '200');
+        border-bottom-color:color('neutral', '200');
+      }
+    }
+    &:active {
+      .tabNavLink {
+        transition: none;
+        color: color('neutral', '100');
+        border-bottom-color:color('neutral', '600');
+      }
+    }
+  }
+}

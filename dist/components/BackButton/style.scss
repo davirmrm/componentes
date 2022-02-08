@@ -1,0 +1,20 @@
+@import '../../assets/styles/';
+
+.backButton {
+  display: flex;
+  align-items: center;
+  height: 2rem;
+  cursor: pointer;
+  width: fit-content;
+  padding-right: 1rem;
+  &:hover {
+    opacity: .8;
+  }
+  h6 {
+    @include tipography('subheading');
+  }
+  .icon {
+    margin-right: .5rem;
+    fill: color('neutral', '500');
+  }
+}

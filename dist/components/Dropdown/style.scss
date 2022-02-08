@@ -1,0 +1,172 @@
+@import '../../assets/styles/';
+
+.dropdownContainer {
+  position: relative;
+  .dropdownHeader {
+    user-select: none;
+    display: flex;
+    height: 2rem;
+    padding: 0 .75rem;
+    align-items: center;
+    cursor: pointer;
+    & > span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include tipography('label');
+      & > div {
+        display: flex;
+        align-items: center;
+        & > span {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+  // Colors
+  &.primary {
+    .dropdownHeader {
+      background-color: color('neutral', '600');
+      & > svg {
+        fill: color('neutral', '100');
+      }
+      & > span {
+        color: color('neutral', '100');
+      }
+    }
+    &.open {
+      .dropdownHeader {
+        background-color: color('neutral', '800');
+      }
+    }
+  }
+  &.secondary {
+    .dropdownHeader {
+      background-color: transparent;
+      & > svg {
+        fill: color('neutral', '100');
+      }
+      & > span {
+        color: color('neutral', '100');
+      }
+    }
+    &.open {
+      .dropdownHeader {
+        background-color: transparent;
+      }
+    }
+  }
+
+
+  &.withLabel {
+    .dropdownHeader {
+      background-color: color('neutral', '800');
+    }
+  }
+
+  .dropdownContent {
+    position: absolute;
+    z-index: 10;
+    top: 2.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.35) !important;
+    &.right {
+      right: 0;
+    }
+  }
+
+  &.warning {
+    .dropdownHeader {
+      background-color: color('state', 'warning');
+      & > svg {
+        fill: color('neutral', '1000');
+      }
+      & > span {
+        color: color('neutral', '1000');
+      }
+    }
+  }
+  &.danger {
+    .dropdownHeader {
+      background-color: color('state', 'danger');
+      & > svg {
+        fill: color('neutral', '1000');
+      }
+      & > span {
+        color: color('neutral', '1000');
+      }
+    }
+  }
+  &.success {
+    .dropdownHeader {
+      background-color: color('state', 'success');
+      & > svg {
+        fill: color('neutral', '1000');
+      }
+      & > span {
+        color: color('neutral', '1000');
+      }
+    }
+  }
+
+  &.inative {
+    .dropdownHeader {
+      background-color: color('neutral', '500');
+      & > svg {
+        fill: color('neutral', '1000');
+      }
+      & > span {
+        color: color('neutral', '1000');
+      }
+    }
+  }
+
+  // FOREGROUND
+
+  &.statusForeground {
+    .dropdownHeader {
+      background-color: transparent;
+      @include tipography('button');
+    }
+  }
+
+  &.warningForeground {
+    .dropdownHeader {
+      & > svg {
+        fill: color('state', 'warning');
+      }
+      & > span {
+        color: color('state', 'warning');
+      }
+    }
+  }
+  &.dangerForeground {
+    .dropdownHeader {
+      & > svg {
+        fill: color('state', 'danger');
+      }
+      & > span {
+        color: color('state', 'danger');
+      }
+    }
+  }
+  &.successForeground {
+    .dropdownHeader {
+      & > svg {
+        fill: color('state', 'success');
+      }
+      & > span {
+        color: color('state', 'success');
+      }
+    }
+  }
+  &.inativeForeground {
+    .dropdownHeader {
+      & > svg {
+        fill: color('neutral', '500');
+      }
+      & > span {
+        color: color('neutral', '500');
+      }
+    }
+  }
+}

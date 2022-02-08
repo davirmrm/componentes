@@ -1,0 +1,24 @@
+@import '../../assets/styles/';
+
+.customHeader {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
+  .icon {
+    margin-left: 10px;
+    fill: color('neutral', '500');
+    display: none;
+  }
+  &:hover {
+    .icon {
+      display: block !important;
+    }
+  }
+  &.hover {
+    .icon {
+      display: block !important;
+    }
+  }
+}

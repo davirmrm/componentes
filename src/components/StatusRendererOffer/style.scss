@@ -1,0 +1,41 @@
+@import '../../assets/styles/';
+
+.statusRendererOffer {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  span {
+    display: flex;
+    align-items: center;
+    & > .icon {
+      margin-right: .5rem;
+      width: 1rem;
+      height: 1rem;
+      &.warning {
+        fill: color('state', 'warning');
+      }
+      &.danger {
+        fill: color('state', 'danger');
+      }
+      &.success {
+        fill: color('state', 'success');
+      }
+    }
+    & > span {
+      @include tipography('button');
+      &.success {
+        color: color('state', 'success');
+      }
+      &.warning {
+        color: color('state', 'warning');
+      }
+      &.danger {
+        color: color('state', 'danger');
+      }
+      &.inative {
+        color: color('neutral', '500');
+      }
+    }
+  }
+}

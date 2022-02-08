@@ -1,0 +1,28 @@
+@import '../../assets/styles/';
+
+.arrowNavigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & > div {
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    &:hover {
+      .icon {
+        fill: color('neutral', '200');
+      }
+    }
+    &:active {
+      .icon {
+        fill: color('neutral', '900');
+      }
+    }
+    .icon {
+      fill: color('neutral', '500');
+    }
+  }
+}

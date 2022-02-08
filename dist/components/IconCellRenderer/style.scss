@@ -1,0 +1,19 @@
+@import '../../assets/styles/';
+
+.iconCell {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  & > svg {
+    fill: color('neutral', '500');
+    &.white {
+      fill: color('neutral', '100');
+    }
+  }
+  &:hover {
+    opacity: .8;
+  }
+}
