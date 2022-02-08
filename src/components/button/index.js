@@ -1,5 +1,5 @@
 import React from 'react'
-import './button.css'
+import style from './button.css'
 
 export const Button = ({
   children,

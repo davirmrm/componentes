@@ -9,6 +9,8 @@ exports.Button = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var style = {};
+
 var Button = function Button(_ref) {
   var children = _ref.children,
       _ref$action = _ref.action,
