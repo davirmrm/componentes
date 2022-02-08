@@ -44,9 +44,9 @@
   width: 100vw;
 }
 
-#root-modal .fullScreen .modal-actions {
-  margin-right: 15px;
-}
+/*#root-modal .fullScreen .modal-actions {
+   margin-right: 15px; 
+}*/
 
 #root-modal .fullScreen .modal-content {
   overflow: auto;
@@ -86,6 +86,7 @@
 
 #root-modal .modal-close:hover {
   background-color: var(--modal-bgh);
+  color: var(--modal-bg);
 }
 #root-modal .modal-close:focus {
   position: relative;

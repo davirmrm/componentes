@@ -1,27 +1,73 @@
 import React from 'react'
+import { validarCampo } from '../../validation/Validation'
 
-export function Input({ children, action, value, label, name, type = 'text', color = '', disabled = false }) {
+export function Input({ 
+  children, 
+  action,
+  actionBlur,
+  value, 
+  label, 
+  name = '', 
+  type = 'text', 
+  color = '', 
+  disabled = false,
+  required = {},
+  maxLength = '1000'
+}) {
+  const require = Object.keys(required)
+  const pattern = e => {
+    if (typeof required?.pattern === 'object') {
+      return JSON.stringify(required.pattern)
+    } else if (typeof required?.pattern === 'string') {
+      return required.pattern
+    } else {
+      return ''
+    }
+  }
+  const typename = 'K'
+  const typename2 = 'B'
+
+  const validar = e => {
+    const v = (require.length) ? validarCampo(e) : {}
+    if (actionBlur) actionBlur(e, v)
+  }
+
   return (
-    <div className={`form-box ${color} `}>
-      <label htmlFor={`id-${name}`}>{label}</label>
+    <div className={`form-box ${color} ${require.length && (required.erro[name]?'erro':'')} `}>
+      {label?<label className='label-input' htmlFor={`id-${name}`}>{require.length?<span>*</span>:''} {label}</label>:null}
       <div>
-        <input type={type} name={name} id={`id-${name}`} value={value} onChange={action} disabled={disabled} />
-
-        {children && children.length ? (
-          children.map(e => {
-            return e && e.type && e.type.name === 'ActionForm' ? e : null
-          })
-        ) : children && children.type && children.type.name === 'ActionForm' ? (
-          <div className='input-actions'>{children}</div>
-        ) : null}
+        <input 
+          id={`id-${name}`} 
+          type={type} 
+          name={name} 
+          value={value} 
+          onChange={action} 
+          onBlur={e => validar(e)} 
+          disabled={disabled}
+          maxLength={maxLength}
+          pattern={pattern()}
+        />
+        <div className='input-actions'>
+          {children && children.length
+            ? children.map(e =>  {
+              console.log(e, typename, 'input', e?.type?.name) 
+              return e?.type && (e.type?.name === 'ActionForm' || e.type?.name === typename || e.type?.name === typename2) ? e : null
+            })
+            : children && children.type && (children.type?.name === 'ActionForm' || children.type?.name === typename || children.type?.name === typename2)
+            ? children
+            : null}
+        </div>
       </div>
       {children && children.length
-        ? children.map(e => {
-            return e && e.type && e.type.name !== 'ActionForm' ? e : null
-          })
-        : children && children.type && children.type.name !== 'ActionForm'
+        ? children.map(e => e?.type && (e.type?.name !== 'ActionForm' && e.type?.name !== typename && e.type?.name !== typename2) ? e : null)
+        : children && children.type && (children.type?.name !== 'ActionForm' && children.type?.name !== typename && children.type?.name !== typename2)
         ? children
         : null}
+      {
+        required.erro?.[name] ?
+          <span className='campo-obrigatorio'>{required.message}</span>
+        :null
+      }
     </div>
   )
 }

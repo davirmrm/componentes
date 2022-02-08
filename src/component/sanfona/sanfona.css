@@ -1,0 +1,55 @@
+.box-tab{
+  
+}
+.box-tab .sanfona-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.box-tab .sanfona-header > div{
+  border: 1px solid var(--primary-bgh);
+  border-bottom: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.box-tab .sanfona-header > div.active{
+  background-color: var(--primary-bgh);
+  color: var(--primary-color);
+}
+.box-tab .sanfona-content{
+  border: 1px solid var(--primary-bgh);
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px 15px;
+}
+
+.custom-tab{
+  
+}
+.custom-tab .sanfona-header {
+  font-size: 18px;
+  border-left: 4px solid;
+  border-bottom: 1px solid;
+  border-color: var(--primary-bg);
+  padding: 4px 10px;
+  margin: 10px 0;
+  /* box-shadow: 0px 0px 2px var(--input-bgh); */
+}
+.custom-tab .sanfona-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+.custom-tab .sanfona-header:hover {
+  opacity: 0.8;
+}
+.custom-tab .sanfona-content{
+  display: none;
+}
+.custom-tab .open .sanfona-content{
+  display: block;
+}

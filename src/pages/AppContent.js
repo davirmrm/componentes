@@ -87,7 +87,6 @@ export default () => {
       <Alert />
       <div className='App'>
         <header className='App-header'>
-          <Logo />
           <p onClick={() => setOpen(!open)}>
             Edit <code>src/App.js</code> and save to reload.
           </p>

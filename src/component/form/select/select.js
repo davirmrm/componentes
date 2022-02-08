@@ -1,35 +1,44 @@
 import React, { useState, useRef, useEffect } from 'react'
 import useOutsideClick from '../../useOusideClick/useoutsideclick'
 import { IcoClose, IcoSearch } from '../../icon/icon'
+import { validarCampo } from '../../validation/Validation'
 
 const chargeDefault = { max: 500, text: 'Mais itens', action: () => null }
 export function Select({
   children,
   options,
   action,
+  actionClose,
   selected,
   label,
   name,
   color = '',
-  closeOnSelect = true,
+  closeOnSelect = null,
   multiSelect = false,
   disabled = false,
-  textCustom = ['Selecione', 'Selecionado', 'Selecionados', 'Marcar todos', 'Desmarcar todos'],
+  selectedIten = true,
+  textCustom = ['Select', 'Selected', 'Selecteds', 'Tick all'],
   filter = false,
   charge = chargeDefault,
   optionLabel = 'name',
   optionValue = 'id',
-  optionCustom = ''
+  optionCustom = '',
+  required = {}
 }) {
+  closeOnSelect = closeOnSelect === null ? ( multiSelect ? false : true ) : closeOnSelect
   const [selectOpen, setSelectOpen] = useState(false)
   const [selectState, setSelectState] = useState([])
   const openSelect = e => {
     setSelectOpen(e)
   }
 
+  //testanso
   const ref = useRef()
   useOutsideClick(ref, e => {
     openSelect(e)
+    if (!e && selectOpen === true) {
+      closeAction(selected)
+    }
   })
 
   useEffect(() => {
@@ -103,10 +112,21 @@ export function Select({
   const selectAll = e => {
     action({ target: { name: name, value: e ? options : [], type: 'select' } })
   }
+  
+  const closeAction = e => {
+    e = closeOnSelect && multiSelect ? selected : e
+    const resp = multiSelect ? (e ? e : []) : e ? e : {}
+    const v = (require.length) ? validarCampo({target: {name, value: resp, pattern: multiSelect ? 'multiselect' : 'select' }}) : {}
+    if (actionClose) {actionClose(resp, v)}
+    openSelect(false)
+  }
 
+  const require = Object.keys(required)
+  const typename = 'Oe'
+  console.log(children, typename, 'filterSelect', children?.type?.name) 
   return (
-    <div className={`form-box ${color} `}>
-      <label htmlFor={`id-${name}`}>{label}</label>
+    <div className={`form-box ${color} ${require.length && (required.erro[name]?'erro':'')} `}>
+      <label className='label-input' htmlFor={`id-${name}`}>{require.length?<span>*</span>:''} {label}</label>
       <div ref={ref}>
         <button
           className={`select-selected ${selectOpen ? 'open' : ''}`}
@@ -117,30 +137,14 @@ export function Select({
 
         {selectOpen ? (
           <div className={`select-box ${multiSelect ? 'multiselect' : ''}`}>
-            {multiSelect ? (
-              <div className='select-actions-all'>
-                <button
-                  className='btn secondary normal'
-                  onClick={() => [selectAll(true), closeOnSelect ? openSelect(false) : null]}
-                  title={textCustom[3]}
-                >
-                  {textCustom[3]}
-                </button>
-                <button
-                  className='btn secondary normal'
-                  onClick={() => [selectAll(), closeOnSelect ? openSelect(false) : null]}
-                  title={textCustom[4]}
-                >
-                  {textCustom[4]}
-                </button>
-              </div>
-            ) : null}
+            
+       
 
             {children && children.length ? (
               children.map(e => {
-                return e && e.type && e.type.name === 'FilterSelect' ? e : null
+                return e && e.type && (e.type.name === 'FilterSelect' || e.type.name === typename) ? e : null
               })
-            ) : children && children.type && children.type.name === 'FilterSelect' ? (
+            ) : children && children.type && (children.type.name === 'FilterSelect' || children.type.name === typename) ? (
               children
             ) : filter ? (
               <FilterSelect
@@ -151,11 +155,19 @@ export function Select({
               />
             ) : null}
 
+            {multiSelect? 
+              (<div className={`select-all ${selected.length > 0 && selected.length === options.length? 'selected' : ''}`} 
+              onClick={() => [selectAll(selected.length !== options.length? true : ''), closeOnSelect ? closeAction(selected) : null]}>
+                <span className='checkelement'></span>
+                {textCustom[3]}
+              </div>)
+            :null}
+
             <div className='select-options'>
-              {!multiSelect ? (
+              {!multiSelect && selectedIten ? (
                 <div
                   className={selected === {} ? 'selected' : ''}
-                  onClick={e => [selectAction(), closeOnSelect ? openSelect(false) : null]}
+                  onClick={e => [selectAction(), closeOnSelect ? closeAction() : null]}
                 >
                   {textCustom[0]}
                 </div>
@@ -166,7 +178,7 @@ export function Select({
                   <div
                     className={veryfiSelected(selectState[i]) ? 'selected' : ''}
                     key={`${name}-${e[optionValue]}`}
-                    onClick={e => [selectAction(selectState[i]), closeOnSelect ? openSelect(false) : null]}
+                    onClick={e => [selectAction(selectState[i]), closeOnSelect ? closeAction(selectState[i]): null]}
                   >
                     {multiSelect ? <span className='checkelement'></span> : null}
                     {optionCustom ? optionCustom(e) : e[optionLabel]}
@@ -186,6 +198,12 @@ export function Select({
           </div>
         ) : null}
       </div>
+      
+      {
+        required.erro?.[name] ?
+          <span className='campo-obrigatorio'>{required.message}</span>
+        :null
+      }
     </div>
   )
 }
@@ -231,4 +249,16 @@ export function FilterSelect({
       </div>
     </div>
   )
+}
+
+
+export const verifySelectValue = e => {
+  if (Array.isArray(e.value)) {
+    const val = e.value[0]
+    const sel = e.list.filter((v)=> v[e.val?e.val:'name'] === val[e.val?e.val:'name'])
+    return sel.length ? sel[0] : {}
+  } else {
+    const sel = e.list.filter((v)=> v[e.val?e.val:'name'] === e.value)
+    return sel.length ? sel[0] : {}
+  }
 }

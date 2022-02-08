@@ -4,12 +4,12 @@ import { Button } from '../button/button'
 // import { IcoArrowForward, IcoArrowBack, IcoSpinner } from '../icon'
 
 const textDefault = {
-  de: 'de',
-  paginas: 'páginas',
-  itens: 'registros',
-  next: 'Próximo',
-  before: 'Anterior',
-  reload: 'Atualizar'
+  de: 'of',
+  paginas: 'pages',
+  itens: 'Registers',
+  next: 'Next',
+  before: 'Previous',
+  reload: 'Update'
   // next: <IcoArrowForward />,
   // before: <IcoArrowBack />,
   // reload: <IcoSpinner />
@@ -38,7 +38,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
     <div className='pagination-custom'>
       <Button
         type='btn circle'
-        color='secondary'
+        color='primary'
         action={() => reloadPaginate(data.pageNumber - 1)}
         disabled={data.pageNumber === 0 ? true : false}
       >
@@ -48,7 +48,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
         <input type='number' name='paginate' value={paginateTemp} onChange={event => changePaginate(event)} />
         <Button
           type='btn circle'
-          color='secondary'
+          color='primary'
           action={() => reloadPaginate()}
           disabled={data.totalElements === 0 ? true : false}
         >
@@ -58,7 +58,7 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
 
       <Button
         type='btn circle'
-        color='secondary'
+        color='primary'
         action={() => reloadPaginate(data.pageNumber + 1)}
         disabled={data.pageNumber >= data.totalPages - 1 ? true : false}
       >
@@ -66,8 +66,8 @@ export function Paginate({ data = { pageNumber: 0, totalPages: 1, totalElements:
       </Button>
 
       <span className='pagination-info'>
-        {`${data.pageNumber + 1} ${text.de} ${data.totalPages} ${text.paginas}`}
-        {` - ${data.totalElements} ${text.itens}`}
+        {`${data.pageNumber ? data.pageNumber + 1 : 0} ${text.de} ${data.totalPages ? data.totalPages : 0} ${text.paginas}`}
+        {` - ${data.totalElements ? data.totalElements : 0} ${text.itens}`}
       </span>
     </div>
   )

@@ -4,7 +4,10 @@ import './modal.css'
 
 import { IcoClose } from '../icon/icon'
 
+const typename = 'Ce'
+
 export function Modal({ title = '', children, open = false, close = {}, closeText = 'Fechar', size = 'medium' }) {
+  if (children?.length === undefined) { children = [children] }
   return (
     <Portal name='modal'>
       {open
@@ -21,9 +24,10 @@ const fulscren = ({ title, children, closeText, close }) => {
     <div className={`box-modal fullScreen`}>
       <div className='modal-header'>
         {title}
-        {children.map(e => {
-          return e && e.type && e.type.name === 'ActionsModal' ? (
-            <div key={e.type} className='modal-actions'>
+        {children?.map(e => {
+          console.log(children.type.name, 'modal full');
+          return e?.type?.name && (e.type.name === typename || e.type.name === 'ActionsModal') ? (
+            <div key={`${e.type}-actions-modal`} className='modal-actions'>
               <button className='btn secondary normal' onClick={close}>
                 {closeText}
               </button>
@@ -32,9 +36,9 @@ const fulscren = ({ title, children, closeText, close }) => {
           ) : null
         })}
       </div>
-      {children.map(e => {
-        return e && e.type ? null : (
-          <div key={e.type} className='modal-content'>
+      {children?.map(e => {
+        return e?.type?.name  && (e.type.name === typename || e.type.name === 'ActionsModal') ? null : (
+          <div key={`${e.type}-actions-modal`} className='modal-content'>
             {e}
           </div>
         )
@@ -54,25 +58,26 @@ const modalNormal = ({ title, children, size, closeText, close }) => {
           </button>
         </div>
 
-        {children.map((e, i) => {
-          return e && e.type && e.type.name === 'ActionsModal' ? (
-            <div key={e.type} className='modal-actions'>
+        {children.map((e, i) =>  {
+            console.log(e, typename, 'modal', e.type?.name);
+          return e?.type?.name  && (e.type.name === typename || e.type.name === 'ActionsModal') ? (
+            <div key={`${e.type}-actions-modal`} className='modal-actions'>
               <button className='btn secondary normal' onClick={close}>
                 {closeText}
               </button>
               {e}
             </div>
           ) : (
-            <div key={e} className='modal-content'>
+            <div key={`${e}-actions-modal`} className='modal-content'>
               {e}
             </div>
-          )
-        })}
+          )}
+        )}
       </div>
     </div>
   )
 }
 
 export function ActionsModal({ children }) {
-  return children
+  return <>{children}</>
 }
