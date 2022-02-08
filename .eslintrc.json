@@ -20,7 +20,7 @@
     "better-styled-components",
     "eslint-plugin-import-helpers"
   ],
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended"],
   "rules": {
     "react/jsx-filename-extension": [
       "error",
