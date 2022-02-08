@@ -1,6 +1,6 @@
 {
   "version": "0.1.1",
-  "name": "@bsr/ui",
+  "name": "@davirmrm-ui/dasboard",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack --watch --progress --mode development --config webpack.dev.js",
